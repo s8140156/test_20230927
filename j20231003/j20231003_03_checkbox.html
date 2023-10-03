@@ -4,6 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>練習三</title>
+	<style>
+		h3{
+			color: red;
+		}
+	</style>
 </head>
 <body>
 	<div class="container">
@@ -31,14 +36,14 @@
 		</p>
 	</div>
 	<div class="container">
-		<h3>radio</h3>
+		<h3>radio單選</h3>
 		<form action="">
 			<p>
-				<input type="radio" name="" value="">
+				<input type="radio" name="radio" value="">
 				<label for="item1">item1</label>
-				<input type="radio" name="" value="">
+				<input type="radio" name="radio" value="">
 				<label for="item2">item2</label>
-				<input type="radio" name="" value="">
+				<input type="radio" name="radio" value="">
 				<label for="item3">item3</label>
 			</p>
 		</form>
@@ -55,8 +60,38 @@
 			</select>
 		</p>
 	</div>
-		
-	</form>
-	
+	<div class="container">
+		<h3>checkbox</h3>
+		<!-- []代表陣列array 多選 -->
+		<input type="checkbox" name="myCheckbox[]" id="check1">
+		<label for="check1">html</label>
+		<input type="checkbox" name="myCheckbox[]" id="check2">
+		<label for="check2">css</label>
+		<input type="checkbox" name="myCheckbox[]" id="check3">
+		<label for="check3">php</label>
+	</div>
+	<div class="container">
+		<h3>sumbit</h3>
+		<input type="submit" value="送出">
+	</div>
+	<div class="container">
+		<h3>reset</h3>
+		<input type="reset" value="重設">
+	</div>
+	<div class="container">
+		<h3>password</h3>
+		<p>
+			<input type="password">
+		</p>
+	</div>
+	<div class="container">
+		<h3>textarea</h3>
+		<!-- pre 上面文字會跟著位置走 -->
+		<textarea name="myTextarea" id="" cols="70" rows="15">
+	aloha taiwan
+	aloha taiwan
+		</textarea>
+	</div>
+
 </body>
 </html>
