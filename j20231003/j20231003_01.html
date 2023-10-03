@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>練習1</title>
+	<style>
+		.container {
+			width: 80%;
+			margin: auto;
+		}
+
+		.container2 {
+			text-align: center;
+		}
+
+		table,
+		th,
+		tr,
+		td {
+			border: 1px solid lightslategrey;
+			border-collapse: collapse;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		table {
+			width: 100%;
+			/* height: 600px; */
+		}
+
+		td {
+			vertical-align: text-top;
+			text-align: center;
+			color: chocolate;
+			font-size: larger;
+			font-weight: 700;
+		}
+
+		.w-25 {
+			width: 25%;
+		}
+
+		.w-50 {
+			width: 50%;
+		}
+
+		.h-10 {
+			height: 10vh;
+			text-align: left;
+		}
+
+		.h-20 {
+			height: 20vh;
+			text-align: left;
+		}
+
+		.h-25 {
+			height: 25vh;
+		}
+
+		.h-30 {
+			height: 30vh;
+		}
+
+		.h-50 {
+			height: 50vh;
+		}
+
+		.h-60 {
+			height: 60vh;
+		}
+
+		.h-70 {
+			height: 70vh;
+		}
+
+		.no-border-top {
+			border-top: 0px;
+		}
+
+		h2 {
+			text-align: center;
+		}
+
+		h4 {
+			color: blue;
+		}
+
+		p {
+			font-style: italic;
+			color: black;
+			font-weight: 500;
+		}
+
+		.bg-c1 {
+			background-color: hotpink;
+		}
+
+		.bg-c2 {
+			background-color: lightyellow;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container2">
+		<a href="#j1">康乃爾</a> &nbsp;&nbsp;
+		<a href="#j2">東大</a> &nbsp;&nbsp;
+		<a href="#j3">麥肯錫</a> &nbsp;&nbsp;
+		<a href="#j4">獲利時代</a> &nbsp;&nbsp;
+	</div>
+
+
+	<div id="j1"></div>
+	<h2>筆記法-康乃爾</h2>
+	<div class="container">
+		<table>
+			<tr>
+				<td class="h-50">B<br>整理</td>
+				<td class="h-50">A<br>筆記</td>
+			</tr>
+			<tr>
+				<td class="h-20" colspan="2">C<br>總括</td>
+				<!-- <td></td> -->
+			</tr>
+		</table>
+		<br>
+		<a href="#">Top</a>
+	</div>
+
+
+	<br>
+	<hr>
+
+	<div id="j2"></div>
+	<h2>筆記法-東大</h2>
+	<div class="container">
+		<table>
+			<tr>
+				<td class="h-60 w-50">A<br>筆記</td>
+				<td class="h-60 w-25">B<br>整理</td>
+				<td class="h-60 w-25">C<br>總括</td>
+			</tr>
+		</table>
+		<br>
+		<a href="#">Top</a>
+	</div>
+
+	<br>
+	<hr>
+
+	<div id="j3"></div>
+	<h2>筆記法-麥肯錫</h2>
+	<div class="container">
+		<table>
+			<tr>
+				<td class="h-10" colspan="3" height:20%>重點問題</td>
+				<!-- <td></td>
+			<td></td> -->
+			</tr>
+			<tr>
+				<td class="h-60">A<br>現狀</td>
+				<td class="h-60">B<br>解釋</td>
+				<td class="h-60">C<br>行動</td>
+			</tr>
+		</table>
+		<br>
+		<a href="#">Top</a>
+	</div>
+
+	<br>
+	<hr>
+
+	<div id="j4"></div>
+	<h2>獲利時代-表格</h2>
+	<div class="container">
+		<table>
+			<tr>
+				<td class="h-50 bg-c1" rowspan="2">
+					<h4 class="text-blue">Key Partnerships</h4>
+					<p class="text-i">關鍵合作夥伴</p>
+				</td>
+				<td class="h-25">
+					<h4>Key Activities</h4>
+					<p>關鍵活動</p>
+				</td>
+				<td class="bg-c1" rowspan="2">
+					<h4>Value Proposition</h4>
+					<p>價值主張</p>
+				</td>
+				<td>
+					<h4>Customer Relationship</h4>
+					<p>顧客關係</p>
+				</td>
+				<td class="bg-c1" rowspan="2">
+					<h4>Customer Segments</h4>
+					<p>目標客層</p>
+				</td>
+			</tr>
+			<tr>
+				<!-- <td>6</td> -->
+				<td class="h-25 bg-c2">
+					<h4>Key Resources</h4>
+					<p>關鍵資源</p>
+				</td>
+				<!-- <td>8</td> -->
+				<td class="bg-c2">
+					<h4>Channels</h4>
+					<p>通路</p>
+				</td>
+				<!-- <td>10</td> -->
+			</tr>
+		</table>
+		<table class="no-border-top">
+			<tr class="no-border-top">
+				<td class="h-30 no-border-top">
+					<h4>Cost Structure</h4>
+					<p>成本結構</p>
+				</td>
+				<td class="h-30 no-border-top">
+					<h4>Revenue Streams</h4>
+					<p>收益流</p>
+				</td>
+			</tr>
+		</table>
+		<br>
+		<a href="#">Top</a>
+	</div>
+</body>
+
+</html>
