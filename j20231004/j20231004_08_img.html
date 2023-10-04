@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			/* background-image: url(./image/01.jpg);
+			background-size: 80px 80px; */
+			/* 這是整體html上的背景圖 */
+		}
+
+		.box {
+			background-image: url("https://picsum.photos/id/25/200/300");
+			width: 600px;
+			height: 400px;
+			/* 插入背景圖片需要給予尺寸 */
+			background-repeat: no-repeat;
+			/* 假設單圖片尺寸設定 < 背景尺寸 若沒有no-repeat 該圖片填滿整個背景 */
+			background-color: beige;
+			/* 如上述 除非寫入no-repeat 才會顯現背景色 */
+		}
+
+		.clickDiv {
+			background-image: url("./image/01.jpg");
+			background-size: 100px 100px;
+			width: 100px;
+			height: 100px;
+		}
+
+		aImg {
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h3>img</h3>
+		<img src="https://picsum.photos/id/22/600/400
+		" alt="">
+	</div>
+	<div class="container">
+		<h3>background-image</h3>
+		<div class="box">
+			<!-- 插入背景圖片記得給個class box包他 -->
+		</div>
+	</div>
+
+	<div class="container">
+		<h3>link bg-image</h3>
+		<a href="">
+			<div class="clickDiv">
+			</div>
+		</a>
+	</div>
+
+	<div class="container">
+		<h3>link img</h3>
+		<a href="">
+			<img src="./image/01.jpg" alt="" class="aImg">
+		</a>
+	</div>
+
+
+</body>
+
+</html>
