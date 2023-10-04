@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		table,
+		tr,
+		td {
+			/* border: 1px solid black; */
+			border-collapse: collapse;
+			width: 80%;
+			text-align: center;
+			margin: auto;
+		}
+
+		td {
+			width: 50%;
+			height: 50%;
+		}
+
+		video {
+			width: 90%;
+			height: 90%;
+		}
+		.deco{
+			text-align: center;
+			color: brown;
+			font-size: larger;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h3 class="deco">video</h3>
+		<!-- autoplay 自動撥放 + muted靜音 -->
+		<table>
+			<tr>
+				<td>
+					<video src="./video/pexels-jill-burrow-8953678 (Original).mp4" autoplay loop controls></video>
+				</td>
+				<td>
+					<h4>Lorem ipsum dolor sit amet.</h4>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem impedit nostrum blanditiis
+						suscipit veritatis itaque aliquam, enim error ea.</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<br><br>
+
+	<div class="container">
+		<h3 class="deco">video</h3>
+		<table>
+			<tr>
+				<td>
+					<video controls loop muted autoplay>
+						<source src="./video/pexels-jill-burrow-8953678 (Original).mp4" type="video/mp4">
+					</video>
+				</td>
+				<td>
+					<h4>Lorem ipsum dolor sit amet.</h4>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem impedit nostrum blanditiis
+						suscipit veritatis itaque aliquam, enim error ea.</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<br><br>
+
+	<div class="container">
+		<h3 class="deco">audio</h3>
+		<table>
+			<tr>
+				<td>
+					<audio controls loop muted autoplay>
+						<source src="./video/test_mp3.mp3" type="audio/mp3">
+					</audio>
+				</td>
+				<td>
+					<h4>Lorem ipsum dolor sit amet.</h4>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem impedit nostrum blanditiis
+						suscipit veritatis itaque aliquam, enim error ea.</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+
+</body>
+
+</html>
