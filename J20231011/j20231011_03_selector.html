@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		h2 {
+			color: pink;
+		}
+
+		#myP {
+			color: darkgreen;
+		}
+
+		.classP {
+			color: blue;
+		}
+		p{
+			color:red;
+		}
+		.box>p{
+			color:aqua;
+		}
+		.blue{
+			color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<!-- elements -->
+		<h2>basic selector</h2>
+		<p>Lorem ipsum dolor sit amet.</p>
+		<!-- id -->
+		<p id="myP" class="classP">Lorem ipsum dolor sit amet.</p>
+		<!-- 權重 id比class權重高 會優先 -->
+		<!-- class -->
+		<p class="classP">Lorem ipsum dolor sit amet.</p>
+		<!-- 選擇器 -->
+		<!-- 1. css 越靠近 優先 -->
+		<!-- 2. 精準指定 優先 -->
+		<!-- 權重 -->
+
+		<div class="box">
+			<p class="blue">Lorem ipsum dolor sit amet.</p>
+		</div>
+
+
+
+	</div>
+</body>
+
+</html>

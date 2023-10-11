@@ -15,22 +15,49 @@
 			background-image: url(../j20231004/image/mickey.png);
 			background-repeat: no-repeat; */
 		}
-		.box1{
+
+		.box1 {
+			background-color: lightcoral;
+			background-image: url(../j20231004/image/mickey.png), url(../j20231004/image/mickey2.png);
+			background-repeat: no-repeat;
+			background-position: left top, right bottom;
+		}
+
+		.box2 {
+			width: 40%;
+			/* 其實container與box1,2,3是同一層 
+			所以雖然box2顯示width:20%但在container設定margin:auto
+			所以在box2只會顯示置中的20% 而圖片不是偏左 */
 			background-color: lightcoral;
 			background-image: url(../j20231004/image/mickey.png);
 			background-repeat: no-repeat;
 		}
-		.box2{
-			width: 20%;
+
+		.box3 {
 			background-color: lightcoral;
 			background-image: url(../j20231004/image/mickey.png);
 			background-repeat: no-repeat;
+			background-position: left bottom;
+
 		}
-		.box3{
-			background-color: lightcoral;
-			background-image: url(../j20231004/image/mickey.png);
-			background-repeat: no-repeat;
-			background-position: right bottom;
+		table, tr, td{
+			border: solid 1px black;
+			opacity: 1;
+		}
+		table{
+			width: 70%;
+			height:60vh;
+			margin:auto;
+		}
+		td{
+			width: 50%;
+			height:50%;
+			text-align: center;
+		}
+		img{
+			/* text-align: center; */
+			/* 看起來是在td做置中 */
+			opacity: 0.3;
 
 		}
 	</style>
@@ -38,7 +65,24 @@
 
 <body>
 	<div class="container box1">
-
+		<table>
+			<tr>
+				<td>
+					<img src="../j20231004/image/mickey3jpg.jpg" alt="">
+				</td>
+				<td>
+					<img src="../j20231004/image/mickey3jpg.jpg" alt="">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../j20231004/image/mickey3jpg.jpg" alt="">
+				</td>
+				<td>
+					<img src="../j20231004/image/mickey3jpg.jpg" alt="">
+				</td>
+			</tr>
+		</table>
 	</div>
 
 	<div class="container box2">
@@ -47,6 +91,8 @@
 	<div class="container box3">
 
 	</div>
+
+	<div class="container box4"></div>
 </body>
 
 </html>

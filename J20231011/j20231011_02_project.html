@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body{
+			background-color: cadetblue;
+		}
+		.container {
+			width: 90%;
+			height: 86vh;
+			margin: auto;
+			/* border: 1px solid black; */
+			font-size: 24px;
+		}
+
+		.box1 {
+			/* background: lightcoral; */
+			/* height: 32vh; */
+			background-image: linear-gradient(90deg, silver, blue);
+			color: burlywood;
+			border-radius: 15px 50px;
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+
+		table,
+		tr,
+		td {
+			/* border: 1px solid black; */
+			margin: auto;
+		}
+
+		table {
+			width: 90%;
+			height: 90%;
+		}
+
+		td {
+			width: 30%;
+			height: 50%;
+			text-align: center;
+		}
+
+		.box2 {
+			background-image: url('https://picsum.photos/id/870/200/300?grayscale&blur=2');
+			/* opacity: 0.4; */
+			color: yellow;
+			border-radius: 50px 15px;
+		}
+
+		.box3 {
+			background-image: url('https://picsum.photos/id/59/1800/900');
+			background-repeat: no-repeat;
+			color: darkgreen;
+			border-radius: 15px 50px;
+		}
+
+		.nav {
+			width: 90%;
+			height: 14vh;
+			margin: auto;
+			text-align: center;
+			padding-top: 7vh;
+			background-color: antiquewhite;
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			font-size: 30px;
+			border-radius: 15px;
+
+		}
+
+		img {
+			width: 450px;
+			height: 450px;
+			border-radius: 10px;
+		}
+
+		a {
+			text-decoration: none;
+			/* 去除超連結下底線 */
+		}
+
+		iframe {
+			border: 5px solid darkgoldenrod;
+			border-radius: 10px;
+		}
+
+		#top {
+			/* 固定位置 */
+			position: fixed;
+			right: 30px;
+			bottom: 100px;
+		}
+
+		.finger {
+			width: 50px;
+			height: 50px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="nav">
+		<a href="#item1">disney</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="#item2">youtube</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="#item3">googlemap</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+	<br>
+	<div id="item1"></div>
+	<div class="container box1">
+		<table>
+			<tr>
+				<td>
+					<img src="./image/mickey.png" alt="">
+					<p>我是美感文盲<br>我是美感文盲<br>我是美感文盲</p>
+				</td>
+				<td>
+					<img src="./image/mickey2.png" alt="">
+					<p><br>我是美感文盲<br>我是美感文盲</p>
+				</td>
+				<td>
+					<img src="./image/mickey3.jpg" alt="">
+					<p><br><br>我是美感文盲</p>
+				</td>
+			</tr>
+
+		</table>
+	</div>
+	<br>
+	<div id="item2"></div>
+	<div class="container box2">
+		<table>
+			<tr>
+				<td>
+					<iframe width="90%" height="90%" src="https://www.youtube.com/embed/iWV01UuTTP8?si=nbksjYpuspY40JuS"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen></iframe>
+				</td>
+				<td>
+					<p>現在迫切先求功能成功</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<div id="item3"></div>
+	<div class="container box3">
+		<table>
+			<tr>
+				<td>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14458.814632679187!2d121.419516!3d25.044129!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7bec9ad74b1%3A0xa639904a89f26435!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5YyX5Z-65a6c6Iqx6YeR6aas5YiG572y5rOw5bGx6IG35qWt6KiT57e05aC0!5e0!3m2!1szh-TW!2sus!4v1696388326900!5m2!1szh-TW!2sus"
+						width="90%" height="90%" allowfullscreen="" loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</td>
+				<td clasee="td2">
+					<p>現在開始我會每天看APPLE網站提升美感 哈哈哈\^8^/</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<a href="#" id="top">
+		<img class="finger" src="./image/finger.jpg" alt="">TOP
+	</a>
+
+
+
+
+
+</body>
+
+</html>
