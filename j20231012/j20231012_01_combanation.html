@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		/* 選擇器selector > 空格 + ~ , */
+		.p1,
+		.p2,
+		.p3 {
+			color: green;
+		}
+
+		/* .p1 {
+			color: green;
+		}
+
+		.p2 {
+			color: green;
+		}
+
+		.p3 {
+			color: green;
+		} */
+
+		.div2>.p21 {
+			/* 只影響下一層 在下一層不受影響 */
+			color: red;
+		}
+
+		.box1>p {
+			color: yellow;
+		}
+
+		.box2>p {
+			color: green;
+		}
+
+		.box3>p {
+			color: black;
+		}
+
+		.box2>div>p {
+			color: pink;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<!-- , -->
+		<h3>,</h3>
+		<h4>多組選擇器一起</h4>
+		<p class="p1">Lorem, ipsum dolor.</p>
+		<p class="p2">Lorem, ipsum dolor.</p>
+		<p class="p3">Lorem, ipsum dolor.</p>
+
+		<br>
+		<hr><br>
+
+		<!-- > -->
+		<!-- 通常網頁製作時不要包太多階層(以免往後維護複雜) 培養自己工作習慣 模組化練習 -->
+		<h3> > </h3>
+		<h4>下一層</h4>
+		<div class="div2">
+			div2
+			<p class="p21">Lorem ipsum dolor sit amet.</p>
+			<p class="p21">Lorem ipsum dolor sit amet.</p>
+			<p class="p21">Lorem ipsum dolor sit amet.
+			<div class="div">
+				<p>Lorem, ipsum dolor.</p>
+			</div>
+			</p>
+			<p class="p21">Lorem ipsum dolor sit amet.</p>
+		</div>
+		<br>
+		<hr><br>
+		<div class="container box1">
+			<p>Lorem ipsum dolor sit amet.</p>
+		</div>
+		<div class="container box2">
+			<p>Lorem ipsum dolor sit amet.</p>
+			<div>
+				<p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+			</div>
+		</div>
+		<div class="container box3">
+			<p>Lorem ipsum dolor sit amet.</p>
+		</div>
+
+
+	</div>
+</body>
+
+</html>
