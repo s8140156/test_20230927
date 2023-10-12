@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		table,th,tr,td{
+			border: 1px solid black;
+			text-align: center;
+			border-collapse: collapse;
+		}
+		table{
+			width:100%
+		}
+		/* th{
+			width:50%
+		} */
+		/* tr,td{
+			height: 10vh;
+		} */
+		.money::before{
+			content: "$";
+		}
+		.money::after{
+			content: "元";
+		}
+		.performance::after{
+			content: "%";
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<table>
+			<tr>
+				<!-- 可以在表格這邊設定表格寬度以利後面列印觀覽方便 -->
+				<th width="15%">name</th>
+				<th width="25%">bonus</th>
+				<th width="25%">績效成長</th>
+				<th>備註</th>
+				
+			</tr>
+			<tr>
+				<td>amy</td>
+				<td class="money">1000</td>
+				<td class="performance">20</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>bob</td>
+				<td class="money">5000</td>
+				<td class="performance">50</td>
+
+				<td></td>
+			</tr>
+			<tr>
+				<td>cat</td>
+				<td class="money">10000</td>
+				<td class="performance">80</td>
+
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

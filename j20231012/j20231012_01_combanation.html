@@ -45,6 +45,27 @@
 		.box2>div>p {
 			color: pink;
 		}
+
+		/* 空格 全部被影響 */
+		/* 第二個div是指divA底下所有div層 */
+		.divA div {
+			color: blue;
+		}
+
+		/* > 只會影響下一層平行階 */
+		.divA>div {
+			color: yellowgreen;
+		}
+
+		/*  只會影響next兄弟姊妹 一個 */
+		.sibling+p {
+			color: pink;
+		}
+
+		/*  只會影響next兄弟姊妹 全部 */
+		.sibling~p {
+			color: blueviolet;
+		}
 	</style>
 </head>
 
@@ -89,6 +110,49 @@
 		<div class="container box3">
 			<p>Lorem ipsum dolor sit amet.</p>
 		</div>
+
+		<br>
+		<hr><br>
+		<h3>空格 如果可以少用</h3>
+		<div class="divA">
+			div A
+			<div class="divA1">
+				&nbsp;&nbsp;div A1
+				<div class="divA11">
+					&nbsp;&nbsp;&nbsp;div A11
+					<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet.
+					</p>
+				</div>
+			</div>
+			div A
+			<div class="divA1">
+				&nbsp;&nbsp;div A1
+				<div class="divA11">
+					&nbsp;&nbsp;&nbsp;div A11
+					<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<br>
+		<hr><br>
+		<h3> +兄弟</h3>
+		<p>
+			Lorem ipsum dolor sit amet.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet.
+		</p>
+		<div class="sibling">
+			<p>&nbsp;&nbsp;Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+			<p>&nbsp;&nbsp;Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+			<p>&nbsp;&nbsp;Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+		</div>
+		<p>Lorem, ipsum dolor.</p>
+		<p>Lorem, ipsum dolor.</p>
 
 
 	</div>

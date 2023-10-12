@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.nav{
+			width:100%;
+		}
+		.nav>a{
+			color:blue;
+			margin-left: 20px;
+			text-decoration: none;
+			font-size: 25px;
+			background-color: lightgrey;
+			border-radius: 20px;
+		}
+		.nav>a:hover{
+			color:green;
+			/* text-decoration: none; */
+			font-size: 30px;
+			background-color: lightpink;
+			border-radius: 20px;
+		}
+		.container{
+			/* 讓圖片可以平行並排 */
+			display: flex;
+			flex-wrap: nowrap;
+		}
+		.box1{
+			background-image: url(./img/mickey.png);
+			background-repeat: no-repeat;
+			margin-left: 30px;
+			width: 200px;
+			height:30vh;
+			background-size: cover;
+			/* 圖片會包滿框架 */
+			border: 3px solid;
+		}
+		.box1:hover{
+			background-image: url(./img/mickey3.jpg);
+			transition-duration: 1s;
+
+		}
+		
+		input:focus {
+			background-color: blueviolet;
+		}
+	</style>
+
+
+
+</head>
+
+<body>
+	<div class="nav">
+		<a href="">Home</a>
+		<a href="">About</a>
+		<a href="">Other</a>
+	</div>
+	<div class="container">
+		<div class="box1"></div>
+		<div class="box1"></div>
+		<div class="box1"></div>
+	</div>
+	<div class="container">
+		<form action="">
+			<p>
+				<label for="">Name?</label>
+				<input type="text">
+			</p>
+			<p>
+				<label for="">Mobile?</label>
+				<input type="text">
+			</p>
+		</form>
+	</div>
+</body>
+
+</html>

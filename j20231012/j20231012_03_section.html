@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		* {
+			margin: auto;
+		}
+		body{
+			background-color: lightgreen;
+		}
+
+		.header {
+			/* 會有.header是因為有將header給予class 盡量不要以id or element直接調整 */
+			height: 10vh;
+			background-color: lightpink;
+		}
+
+		.nav {
+			background-color: lightsalmon;
+		}
+
+		.nav>a {
+			color: blueviolet;
+			text-decoration: none;
+			/* 不要有下底線 */
+		}
+
+		.container {
+			height: 80vh;
+			width: 80%;
+			margin: auto;
+			background-color: lightgray;
+		}
+
+		.footer {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 一般網頁排版範例 -->
+	<nav class="nav">
+		<a href="#item1">item1</a>
+		<a href="#item2">item2</a>
+		<a href="#item3">item3</a>
+	</nav>
+
+	<header class="header">
+		<h1>Web Titile</h1>
+	</header>
+	<main>
+		<div id="item1"></div>
+		<section class="container">
+			<h3>Item1</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus eius ab laboriosam odio quisquam
+				magni quae, sed at consequatur commodi.</p>
+		</section>
+		<br>
+		<hr><br>
+		<div id="item2"></div>
+		<section class="container">
+			<h3>Item2</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus eius ab laboriosam odio quisquam
+				magni quae, sed at consequatur commodi.</p>
+		</section>
+		<br>
+		<hr><br>
+		<div id="item3"></div>
+		<section class="container">
+			<h3>Item3</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus eius ab laboriosam odio quisquam
+				magni quae, sed at consequatur commodi.</p>
+		</section>
+	</main>
+	<footer class="footer">
+		版權宣告 Lorem ipsum dolor sit amet.
+	</footer>
+</body>
+
+</html>
