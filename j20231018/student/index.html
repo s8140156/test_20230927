@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		* {
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			font-size: medium;
+		}
+
+		.container {
+			margin: auto;
+			margin-top: 30px;
+			width: 80%;
+		}
+
+		table {
+			width: 100%
+		}
+
+		table,
+		tr,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 2px;
+			text-align: center;
+
+		}
+
+		th {
+			background-color: lightcyan;
+		}
+
+		td {
+			height: 30px;
+		}
+
+		/* 使用nth-child()讓欄位(td)/列(tr)變色 odd:奇數/even:偶數 */
+		/* 另外一種方式在html tr設定class 然後在css設定背景色選奇數行 */
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+		/* 以下將奇數列字改藍色 但會將標題列也標藍色 */
+		tr:nth-child(odd) {
+			color: blue;
+		}
+
+		/* 所以在針對標題列(第1列)特別設定黑色 */
+		tr:nth-child(1) {
+			color: black;
+		}
+
+		.text-right {
+			text-align: right;
+		}
+
+		.text-right>a {
+			text-decoration: none;
+		}
+
+		.sibling>a {
+			text-decoration: none;
+		}
+
+		.nav {
+			border: 1px solid black;
+			border-radius: 30px;
+			width: 100%;
+			height: 5vh;
+			text-align: center;
+			padding: 5px;
+			background-color: aqua;
+		}
+
+		.box1 {
+			border: 1px solid black;
+			border-radius: 20px;
+			display: inline-block;
+			padding: 5px 10px;
+			margin: 5px;
+			background-color: lightskyblue;
+		}
+
+		.box1>a {
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container text-right">
+		<h3>student list</h3>
+		<div class="nav">
+			<div class="box1">
+				<a href="../index.html">Home</a>
+			</div>
+			<div class="box1">
+				<a href="./index.html">學生</a>
+			</div>
+			<div class="box1"><a href="../teacher/index.html">老師</a>
+			</div>
+		</div>
+		<a href="./create.html">Add</a>
+		<table>
+			<tr>
+				<th>id</th>
+				<th>name</th>
+				<th>mobile</th>
+				<th>action</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><a href="./edit.html?id=1">Amy</a></td>
+				<td>0911-111-111</td>
+				<td class="sibling">
+					<a href="./edit.html?id=1">修改</a><br>
+					<a href="./delete.html">刪除</a>
+				</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><a href="./edit.html?id=2">Bob</a></td>
+				<td>0922-222-222</td>
+				<td class="sibling">
+					<a href="./edit.html?id=2">修改</a><br>
+					<a href="./delete.html">刪除</a>
+				</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><a href="./edit.html?id=3">Cat</a></td>
+				<td>0933-333-333</td>
+				<td class="sibling">
+					<a href="./edit.html?id=3">修改</a><br>
+					<a href="./delete.html">刪除</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>
