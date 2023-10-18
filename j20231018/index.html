@@ -1,51 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<style>
-*{
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.container{
-	width: 80%;
-	margin: auto;
-	margin-top: 10vh;
-}
-table,tr,td{
-	/* border: 1px solid black; */
-	border-collapse: collapse;
-	/* 有發現如果border沒設border-collapse框線還是會顯示即使註解了border */
+		* {
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			/* background-color: lightslategray; */
+		}
 
-}
-table{
-	width:100%;
-	text-align: center;
-	border-radius: 20px;
+		body {
+			background-color: lightslategray;
+			/* try很多遍後 發現若想要網頁整個背景色 
+	要設在body 設在*會導致字裡面也會有背景色 設在container因為table已填滿會看不出來 */
+		}
 
-}
-td{
-	width:50%;
-	height:50vh;
-	font-size: 50px;
-	border-radius: 10px;
+		.container {
+			width: 80%;
+			margin: auto;
+			margin-top: 10vh;
+			/* background-color: lightslategray; */
+		}
 
-}
-a{
-	text-decoration: none;
-}
-.bg-blue{
-	background-color: lightcyan;
-}
+		table,
+		tr,
+		td {
+			/* border: 1px solid black; */
+			border-collapse: collapse;
+			/* 有發現如果border沒設border-collapse框線還是會顯示即使註解了border */
 
-.bg-coral{
-	background-color: lightcoral;
-}
+		}
 
+		table {
+			width: 100%;
+			text-align: center;
+			border-radius: 20px;
 
+		}
+
+		td {
+			width: 50%;
+			height: 50vh;
+			font-size: 50px;
+			border-radius: 10px;
+
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.bg-blue {
+			background-color: lightcyan;
+		}
+
+		.bg-coral {
+			background-color: lightcoral;
+		}
 	</style>
 </head>
+
 <body>
 	<div class="container">
 		<table>
@@ -60,4 +76,5 @@ a{
 		</table>
 
 </body>
+
 </html>
