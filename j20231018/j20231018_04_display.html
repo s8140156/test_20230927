@@ -7,19 +7,31 @@
 	<title>Document</title>
 	<style>
 		a {
-			width: 50px;
-			height: 50px;
+			width: 100px;
+			height: 100px;
 			background-color: lightsalmon;
 			display: block;
 			margin-bottom: 10px;
+			background-image: url('https://picsum.photos/id/1/100/100');
 		}
-		input{
+		.my-div{
+			width: 150px;
+			height: 150px;
+			background-image: url('https://picsum.photos/id/237/200/300');
+		}
+
+		img {
 			display: block;
 		}
-		li{
+
+		input {
+			/* display: block; */
+		}
+
+		li {
 			display: inline-block;
 			background-color: aqua;
-			width:60px;
+			width: 60px;
 			height: 60px;
 		}
 	</style>
@@ -31,7 +43,22 @@
 		<a href="">home</a>
 		<a href="">about</a>
 		<a href="">other</a>
+
+		<div class="my-div">
+			<a href="">div-home</a>
+		</div>
+		<div class="my-div">
+			<a href="">div-about</a>
+		</div>	<div class="my-div">
+			<a href="">div-other</a>
+		</div>
 	</nav>
+
+	<input type="text">
+	<input type="text">
+	<input type="text">
+
+
 
 	<div class="container">
 		<img src="https://picsum.photos/id/1/200/300" alt="">
@@ -39,8 +66,23 @@
 		<img src="https://picsum.photos/id/3/200/300" alt="">
 
 		<input type="text">
+		<br>
 		<input type="text">
+		<br>
 		<input type="text">
+		<br>
+		<p>
+			<input type="text">
+		</p>
+		<p>
+			<input type="text">
+		</p>
+		<p>
+			<input type="text">
+		</p>
+
+
+
 	</div>
 
 	<div class="container">
