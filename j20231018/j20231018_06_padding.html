@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+	*{
+		box-sizing:border-box;
+		margin: 0;
+		/* border-box是content+padding 如果用這個 就可以做padding設定 */
+		/* 在html預設是content-box
+		也就是說只有content尺寸不含padding */
+		/* 通常是設在* */
+		/* 通常設定起手式這兩個搭配 當網站起頭 為何好計算padding內推 */
+	}
+	
+	.box{
+		width: 500px;
+		height: 500px;
+		background-color: lightgray;
+		border: 3px solid blue;
+		padding-right:100px;
+		padding-left:50px;
+		padding-top:50px;
+		margin-top: 50px;
+		margin-left: 30px;
+	}
+	</style>
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="box">
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique, dolore aperiam minus nesciunt quod amet
+			tenetur in totam qui dolorum?
+		</div>
+	</div>
+</body>
+
+</html>

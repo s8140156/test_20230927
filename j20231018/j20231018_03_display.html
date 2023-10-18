@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.container1{
+			width: 80%;
+			margin: auto;
+			text-align: center;
+		}
+		span {
+			width: 50px;
+			height: 50px;
+			background-color: aquamarine;
+		}
+
+		.display-block{
+			display: block;
+		}
+		.display-inline-block{
+			display: inline-block;
+		}
+		.display-inline{
+			display: inline;
+			background-color: chartreuse;
+		}
+		a{
+			width: 50px;
+			height: 50px;
+			background-color: chartreuse;
+		}
+		table,th,tr,td{
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		table{
+			width: 80%;
+		}
+		th,td{
+			height: 50px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>block</h1>
+		<h3>可以換行</h3>
+		<!-- inline不會換行 -->
+		<h3>可以條大小</h3>
+
+		<span>111</span>
+		<span>222</span>
+		<span class="display-block">333</span>
+
+		<hr>
+
+		<a href="">aaa</a>
+		<a class="display-block" href="">bbb</a>
+		<a href="">ccc</a>
+	</div>
+
+	<hr>
+
+	<div class="container1">
+		<table>
+			<tr>
+				<td>xxx</td>
+				<td>大小換行</td>
+				<td>範例</td>
+				<td>常用元素</td>
+			</tr>
+			<tr>
+				<th>block</th>
+				<td>可大小 可換行</td>
+				<td>
+					<h3>old</h3>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<h3>new</h3>
+					<p>Lorem ipsum <span class="display-block">dolor</span> sit amet.</p>
+					<p>div, h1-h6, p, header, form....</p>
+				</td>
+			</tr>
+			<tr>
+				<th>inline-block</th>
+				<td>可大小 不可換行</td>
+				<td>
+					<h3>old</h3>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<h3>new</h3>
+					<p>Lorem ipsum <span class="display-inline-block">dolor</span> sit amet.</p>
+				</td>
+			</tr>
+			<tr>
+				<th>inline</th>
+				<td>不可調大小 不可換行</td>
+				<td>
+					<h3>old</h3>
+					<p>Lorem ipsum <div>dolor</div> sit amet.</p>
+					<h3>new</h3>
+					<p>Lorem ipsum <div class="display-inline">dolor</div> sit amet.</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+
+</html>
