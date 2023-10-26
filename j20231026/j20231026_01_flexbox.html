@@ -6,29 +6,40 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<style>
+		* {
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			box-sizing: border-box;
+			/* 神奇的魔法盒子 整體=content+padding+border */
+
+		}
+
 		.container {
 			display: flex;
 			/* 要寫在外層 宣告flexbox*/
 			/* flexbox要有兩層結構 */
 			/* flexbox是在解決上下左右置中問題 */
 			width: 100%;
-			height: 50vh;
+			height: 90vh;
 			background-color: lightskyblue;
-			margin-bottom: 20px;
+			margin: auto;
+			margin-bottom: 10px;
 		}
+
 		.container1 {
 			display: flex;
 			/* 要寫在外層 宣告flexbox*/
 			flex-direction: column-reverse;
 			/* default是row(並排) 還有欄,行的reverse, ex.row-reverse */
 		}
+
 		.container2 {
 			display: flex;
-			flex-wrap: wrap-reverse;
+			flex-wrap: wrap;
 			/* default是nowrap也就是所有的物件會排在一列如果物件多會縮小符合一列 */
 			/* wrap會依尺寸進行換行 還有wrap-reverse */
 
 		}
+
 		.container3 {
 			display: flex;
 			flex-flow: column-reverse wrap;
@@ -36,6 +47,7 @@
 			/* shorhand組合將flex-direction & flex-wrap可以一起寫 */
 
 		}
+
 		.container4 {
 			display: flex;
 			justify-content: center;
@@ -47,10 +59,56 @@
 		}
 
 		.item {
+			width: 250px;
+			height: 250px;
+			background-color: lightgrey;
+			margin: 10px;
+		}
+
+		.item-0 {
+			opacity: 0;
 			width: 200px;
 			height: 200px;
 			background-color: lightgrey;
 			margin: 10px;
+			/* 這個可以用在格子數部平均下加上格子但不顯現 只讓排列整齊 */
+		}
+
+		.container5 {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+			/* 排序方法其實是預設但是row */
+			/* 將每行均分 */
+		}
+
+		.item-circle {
+			width: 250px;
+			height: 250px;
+			background-color: lightcoral;
+			margin: 10px;
+		}
+
+		.item-x {
+			width: 250px;
+			height: 250px;
+			background-color: lightgreen;
+			margin: 10px;
+		}
+
+		.p-o {
+			color: blue;
+			font-size: 70px;
+			font-weight: 900;
+			text-align: center;
+		}
+
+		.p-x {
+			color: red;
+			font-size: 70px;
+			font-weight: 900;
+			text-align: center;
 		}
 	</style>
 
@@ -65,13 +123,13 @@
 	</div>
 
 	<div class="container container2">
-		container
 		<div class="item">item1</div>
 		<div class="item">item2</div>
 		<div class="item">item3</div>
 		<div class="item">item4</div>
 		<div class="item">item5</div>
-		<div class="item">item6</div>
+		<div class="item-0">item7</div>
+		<div class="item-0">item8</div>
 	</div>
 	<div class="container container3">
 		container
@@ -87,6 +145,27 @@
 		<div class="item">item1</div>
 		<div class="item">item2</div>
 		<div class="item">item3</div>
+	</div>
+	<div class="container container5">
+		<div class="item-circle">item1
+			<p class="p-o">O</p>
+		</div>
+		<div class="item">item2</div>
+		<div class="item">item3</div>
+		<div class="item">item4</div>
+		<div class="item-circle">item5
+			<p class="p-o">O</p>
+		</div>
+		<div class="item-x">item6
+			<p class="p-x">X</p>
+		</div>
+		<div class="item-x">item7
+			<p class="p-x">X</p>
+		</div>
+		<div class="item">item8</div>
+		<div class="item-circle">item9
+			<p class="p-o">O</p>
+		</div>
 	</div>
 </body>
 
