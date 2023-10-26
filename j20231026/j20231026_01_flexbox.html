@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.container {
+			display: flex;
+			/* 要寫在外層 宣告flexbox*/
+			/* flexbox要有兩層結構 */
+			/* flexbox是在解決上下左右置中問題 */
+			width: 100%;
+			height: 50vh;
+			background-color: lightskyblue;
+			margin-bottom: 20px;
+		}
+		.container1 {
+			display: flex;
+			/* 要寫在外層 宣告flexbox*/
+			flex-direction: column-reverse;
+			/* default是row(並排) 還有欄,行的reverse, ex.row-reverse */
+		}
+		.container2 {
+			display: flex;
+			flex-wrap: wrap-reverse;
+			/* default是nowrap也就是所有的物件會排在一列如果物件多會縮小符合一列 */
+			/* wrap會依尺寸進行換行 還有wrap-reverse */
+
+		}
+		.container3 {
+			display: flex;
+			flex-flow: column-reverse wrap;
+			/* 看起來不管欄行或是wrap都可以reverse組合 */
+			/* shorhand組合將flex-direction & flex-wrap可以一起寫 */
+
+		}
+		.container4 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			/* justify-content(水平置中row)/align-items(垂直置中column)這是最強功能 解決上下左右置中問題 */
+			/* default是flex-start;box內容會置中 但每組box靠左邊排列 */
+			/* center: 會是內容置中後 每組box在container也置中 */
+			/* flex-end: 會是內容置中後 但每組box靠右邊排列 */
+		}
+
+		.item {
+			width: 200px;
+			height: 200px;
+			background-color: lightgrey;
+			margin: 10px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="container container1">
+		container
+		<div class="item">item1</div>
+		<div class="item">item2</div>
+		<div class="item">item3</div>
+	</div>
+
+	<div class="container container2">
+		container
+		<div class="item">item1</div>
+		<div class="item">item2</div>
+		<div class="item">item3</div>
+		<div class="item">item4</div>
+		<div class="item">item5</div>
+		<div class="item">item6</div>
+	</div>
+	<div class="container container3">
+		container
+		<div class="item">item1</div>
+		<div class="item">item2</div>
+		<div class="item">item3</div>
+		<div class="item">item4</div>
+		<div class="item">item5</div>
+		<div class="item">item6</div>
+	</div>
+	<div class="container container4">
+		container
+		<div class="item">item1</div>
+		<div class="item">item2</div>
+		<div class="item">item3</div>
+	</div>
+</body>
+
+</html>
