@@ -54,6 +54,7 @@
 			background-position: center;
 			background-size: cover;
 			border-radius: 30px;
+			/* border: 1px solid black; */
 
 		}
 
@@ -73,21 +74,30 @@
 			width: 50%;
 			/* background-color: #cd571f; */
 			padding-top: 40px;
+			/* border: 1px solid black; */
+			text-align: center;
+			/* display:inline; */
+			/* margin: auto; */
+
+			
 
 		}
 
 		.greenbox {
 			width: 50%;
 			/* background-color: #482572; */
-			border: 1px solid black;
+			/* border: 1px solid black; */
 			padding-top: 40px;
-		}
+			margin: auto;
+			text-align: center;
+				}
 
 		.G1 {
 			border: 1px solid black;
 			width: 200px;
 			height: 200px;
 			background-color: #482572;
+			border-radius: 100%;
 		}
 
 
@@ -95,8 +105,19 @@
 			width: 100px;
 			height: 100px;
 			text-decoration: none;
-			font-weight: 800;
+			margin-right: 20px;
+			font-weight: 500;
 			font-size: larger;
+			color:#482572;
+		}
+
+		a:hover{
+			color:crimson;
+			font-weight: 900;
+			font-size: x-large;
+			transition-duration: 1s;
+			cursor: pointer;;
+
 		}
 
 		img {
@@ -104,13 +125,18 @@
 			height: 70%;
 		}
 
-		h2 {
-			color: #cd571f;
+		.f-w,h3 {
+			color: white;
+			font-size: 25px;
+			/* display:inline-block; */
+			/* text-align: center; */
+			/* margin-bottom: 5px; */
+
 			;
 		}
 		.c-o{
 			color: #cd571f;
-			font-size: medium;
+			font-size: 20px;
 		}
 
 
@@ -118,57 +144,107 @@
 			color: #482572;
 			font-size: medium;
 		}
+		table,th,tr,td{
+			border: 1px solid whitesmoke;
+			border-collapse: collapse;
+		}
+		table{
+			margin: auto;
+		}
+		td, th{
+			text-align: center;
+			color: whitesmoke;
+		}
 	</style>
 </head>
 
 <body>
 	<div class="nav">
-		<a href="">應用程式</a>
-		<a href="">寶可夢圖鑑</a>
+		<a href="#item1">應用程式</a>
+		<a href="#item2">寶可夢圖鑑</a>
 	</div>
+	
+	<div id="item1"></div>
 	<div class="container container1">
 		<div class="redbox">
 			<img class="G2" src="./img/pokemongo.jpg" alt="">
 			<br>
-			<h2>pokemon go</h2>
+			<a class="f-w" href="https://pokemongolive.com/?hl=zh_Hant">pokemon go</a>
 			<br>
-			<p class="c-o">透過iPhone和Android設備，讓PokémonGO在真實世界<br>和神奇寶貝的虛擬世界之間進行遊戲。隨著寶可夢GO，你自己將會在一個全新的世界‧</p>	<br>
+			<p class="c-o">透過iPhone和Android設備，讓PokémonGO在真實世界<br>和神奇寶貝的虛擬世界之間進行遊戲。<br>隨著寶可夢GO，你自己將會在一個全新的世界‧</p>	<br>
 		</div>
 		<div class="redbox">
 			<img class="G2" src="./img/pokemonsleep.jpg" alt="">
 			<br>
-			<h2>pokemon sleep</h2>
+			<a class="f-w" href="https://www.pokemonsleep.net/zh/">pokemon sleep</a>
 			<br>
 			<p class="c-o">讓人更加期待早上起床時刻的睡眠遊戲應用程式。
-				Pokémon Sleep 好評上線中！</p>	<br>
+				<br>Pokémon Sleep 好評上線中！</p>	<br>
 		</div>
 	</div>
+	<div id="item2"></div>
 	<div class="container container2">
 		<div class="greenbox">
-			<img class="G1" src="./img/伊布.png" alt="">
-			<h3>伊布</h3>
-			<br>
-			<p class="c-p">為了能瞬即適應環境的變化，<br>這種寶可夢蘊含著許多種進化的可能性。</p>
-			<br>
+			<img class="G1" src="./img/六尾.png" alt="">
+			<!-- <img class="G1" src="./img/Vulpix-Halloween2022.png" alt=""> -->
+			<h3>六尾</h3>
+			<table>
+				<tr>
+					<th width="20%">屬性</th>
+					<th width="40%">技能</th>
+				</tr>
+				<tr>
+					<th>火</th>
+					<th>電光一閃、氣象球</th>
+				</tr>
+			</table>
+			<!-- <p class="c-p">為了能瞬即適應環境的變化，<br>這種寶可夢蘊含著許多種進化的可能性。</p> -->
 
 		</div>
 		<div class="greenbox">
 			<img class="G1" src="./img/南瓜精.png" alt="">
 			<h3>南瓜精</h3>
-			<br>
-			<p class="c-p">在這個世界遊蕩的靈魂會被裝到南瓜精的身體裡，<br>啟程前往另一個世界。</p>
+			<table>
+				<tr>
+					<th width="20%">屬性</th>
+					<th width="40%">技能</th>
+				</tr>
+				<tr>
+					<th>幽靈、草</th>
+					<th>飛葉快刀、打草結</th>
+				</tr>
+			</table>
+			<!-- <p class="c-p">在這個世界遊蕩的靈魂會被裝到南瓜精的身體裡，<br>啟程前往另一個世界。</p> -->
 		</div>
 		<div class="greenbox">
 			<img class="G1" src="./img/波加曼.png" alt="">
 			<h3>波加曼</h3>
-			<br>
-			<p class="c-p">非常討厭被別人照顧。因為不肯聽訓練家的指示，<br>要和牠變得親密是很困難的。</p><br>
+			<table>
+				<tr>
+					<th width="20%">屬性</th>
+					<th width="40%">技能</th>
+				</tr>
+				<tr>
+					<th>水</th>
+					<th>泡沫、啄鑽</th>
+				</tr>
+			</table>
+			<!-- <p class="c-p">非常討厭被別人照顧。因為不肯聽訓練家的指示，<br>要和牠變得親密是很困難的。</p><br> -->
 		</div>
 		<div class="greenbox">
 			<img class="G1" src="./img/耿鬼.png" alt="">
 			<h3>耿鬼</h3>
-			<br>
-			<p class="c-p">會潛進獵物的影子裡，然後靜靜地<br>等待奪取性命的機會到來。</p><br>
+			<table>
+				<tr>
+					<th width="20%">屬性</th>
+					<th width="40%">技能</th>
+				</tr>
+				<tr>
+					<th>幽靈、毒</th>
+					<th>禍不單行、暗影球</th>
+				</tr>
+			</table>
+			<!-- <p class="c-p">會潛進獵物的影子裡，然後靜靜地<br>等待奪取性命的機會到來。</p><br> -->
 		</div>
 	</div>
 </body>
