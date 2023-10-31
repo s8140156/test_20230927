@@ -8,7 +8,7 @@
 	<style>
 		* {
 			box-sizing: border-box;
-			margin:0;
+			margin: 0;
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		}
 
@@ -19,7 +19,7 @@
 		.nav {
 			width: 90%;
 			height: 10vh;
-			border: 1px solid;
+			/* border: 1px solid; */
 			margin: auto;
 			margin-top: 5px;
 			margin-bottom: 20px;
@@ -30,13 +30,16 @@
 			padding-right: 20px;
 			background-color: #cd571f;
 			position: sticky;
-			top:0;
+			top: 0;
 			text-decoration: none;
+			background-image: url('./img/bg_03.jpg');
+			background-size: cover;
+
 		}
 
 		.container {
-			width: 80%;
-			height: 70vh;
+			width: 90%;
+			height: 100%;
 			border: 1px solid black;
 			margin: auto;
 			text-align: center;
@@ -45,47 +48,75 @@
 
 		}
 
+		.container1 {
+			background-image: url('./img/bg_01.jpg');
+			background-attachment: fixed;
+			background-position: center;
+			background-size: cover;
+			border-radius: 30px;
+
+		}
+
 		.container2 {
 			margin: auto;
 			text-align: center;
 			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
+			text-align: center;
+			justify-content: center;
+			background-image: url('./img/bg_04.jpg');
+			border-radius: 50px;
+
 		}
 
 
 		.redbox {
 			width: 50%;
-			background-color: #cd571f;
+			/* background-color: #cd571f; */
 			padding-top: 40px;
 
 		}
 
 		.greenbox {
 			width: 50%;
-			background-color: #482572;
+			/* background-color: #482572; */
 			border: 1px solid black;
 			padding-top: 40px;
-
-
-
 		}
+
+		.G1 {
+			border: 1px solid black;
+			width: 200px;
+			height: 200px;
+			background-color: #482572;
+		}
+
 
 		a {
 			width: 100px;
 			height: 100px;
 			text-decoration: none;
+			font-weight: 800;
+			font-size: larger;
 		}
 
 		img {
 			width: 70%;
-			height: 60%;
+			height: 70%;
 		}
 
-		p {
-			color: white;
+		h2 {
+			color: #cd571f;
+			;
+		}
+		.c-o{
+			color: #cd571f;
 			font-size: medium;
+		}
 
+
+		.c-p {
+			color: #482572;
+			font-size: medium;
 		}
 	</style>
 </head>
@@ -97,37 +128,47 @@
 	</div>
 	<div class="container container1">
 		<div class="redbox">
-			<img src="./img/pokemongo.jpg" alt="">
-			<h3>pokemon go</h3>
-			<p>透過iPhone和Android設備，讓PokémonGO在真實世界和神奇寶貝的虛擬世界之間進行遊戲。隨著寶可夢GO，你自己將會在一個全新的世界‧</p>
+			<img class="G2" src="./img/pokemongo.jpg" alt="">
+			<br>
+			<h2>pokemon go</h2>
+			<br>
+			<p class="c-o">透過iPhone和Android設備，讓PokémonGO在真實世界<br>和神奇寶貝的虛擬世界之間進行遊戲。隨著寶可夢GO，你自己將會在一個全新的世界‧</p>	<br>
 		</div>
 		<div class="redbox">
-			<img src="./img/pokemonsleep.jpg" alt="">
-			<h3>pokemon sleep</h3>
-			<p>讓人更加期待早上起床時刻的睡眠遊戲應用程式。
-				Pokémon Sleep 好評上線中！</p>
+			<img class="G2" src="./img/pokemonsleep.jpg" alt="">
+			<br>
+			<h2>pokemon sleep</h2>
+			<br>
+			<p class="c-o">讓人更加期待早上起床時刻的睡眠遊戲應用程式。
+				Pokémon Sleep 好評上線中！</p>	<br>
 		</div>
 	</div>
 	<div class="container container2">
 		<div class="greenbox">
-			<img src="./img/伊布.png" alt="">
+			<img class="G1" src="./img/伊布.png" alt="">
 			<h3>伊布</h3>
-			<p></p>
+			<br>
+			<p class="c-p">為了能瞬即適應環境的變化，<br>這種寶可夢蘊含著許多種進化的可能性。</p>
+			<br>
+
 		</div>
 		<div class="greenbox">
-			<img src="./img/南瓜精.png" alt="">
+			<img class="G1" src="./img/南瓜精.png" alt="">
 			<h3>南瓜精</h3>
-			<p></p>
+			<br>
+			<p class="c-p">在這個世界遊蕩的靈魂會被裝到南瓜精的身體裡，<br>啟程前往另一個世界。</p>
 		</div>
 		<div class="greenbox">
-			<img src="./img/波加曼.png" alt="">
+			<img class="G1" src="./img/波加曼.png" alt="">
 			<h3>波加曼</h3>
-			<p></p>
+			<br>
+			<p class="c-p">非常討厭被別人照顧。因為不肯聽訓練家的指示，<br>要和牠變得親密是很困難的。</p><br>
 		</div>
 		<div class="greenbox">
-			<img src="./img/耿鬼.png" alt="">
+			<img class="G1" src="./img/耿鬼.png" alt="">
 			<h3>耿鬼</h3>
-			<p></p>
+			<br>
+			<p class="c-p">會潛進獵物的影子裡，然後靜靜地<br>等待奪取性命的機會到來。</p><br>
 		</div>
 	</div>
 </body>
