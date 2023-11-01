@@ -14,6 +14,7 @@
 			justify-content: space-around;
 		}
 
+			/* item這邊沒有設寬度,寬度因不同尺寸有其他class css樣式 */
 		.item {
 			height: 100px;
 			background-color: lightcoral;
@@ -30,7 +31,7 @@
 
 		.w-40 {
 			width: 40%;
-			height: 300px;
+			height: 500px;
 		}
 
 		.my-input {
@@ -55,6 +56,7 @@
 			width: 100%;
 			height: 100%;
 			/* 學一下是否在圖片直接設定尺寸去固定? */
+			/* 測試過若圖片已有尺寸 若尺寸超過item範圍會超過 要留意圖片尺寸 */
 		}
 	</style>
 </head>
@@ -80,7 +82,7 @@
 			
 		</div>
 		<div class="item w-40">
-			<div class="my-img"><img src="https://picsum.photos/id/237/200/200" alt=""></div>
+			<div class="my-img"><img src="https://picsum.photos/id/237/300/300" alt=""></div>
 			
 		</div>
 		<div class="item w-30"></div>
