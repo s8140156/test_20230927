@@ -1,0 +1,84 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+/* body{
+	width: 1024px;
+	height: 768px;
+	background-color: lightpink;
+} */
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 1024px;
+	margin: auto;
+}
+
+.header {
+	width: 1024px;
+	height: 65px;
+	background-color: lightgreen;
+	margin: auto;
+	border: 1px solid black;
+	border-bottom: 0;
+	/* 把下底線去除 */
+}
+
+.aside {
+	width: 215px;
+	height: calc(768px - 65px - 20px);
+	background-color: lightskyblue;
+	display: flex;
+	flex-direction: column;
+	/* 在.aside去操作flexbox 
+	方向改column結果aside-footer就不會被擠下去了 */
+	/* margin: auto; */
+	border: 1px solid black;
+	border-right: 0;
+	/* 把右框線去除 主要是表格內部不要有框線 */
+}
+
+.aside-header {
+	/* width: 215px; */
+	height: calc(100% - 25px);
+	/* 上面.aside已經定義好高度 所以可以用100%去扣 */
+	background-color: lightcyan;
+}
+
+.aside-footer {
+	height: 25px;
+	background-color: darkgoldenrod;
+}
+
+.main {
+	width: calc(1024px - 215px);
+	/* height: calc(768px - 65px - 20px); */
+	/* aside跟main都要設高度 不能只設一邊 */
+	background-color: bisque;
+	/* margin: auto; */
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+}
+
+.main-header {
+	/* margin: 215px; */
+	height: 29px;
+	background-color: aqua;
+}
+
+.main-footer {
+	height: calc(100% - 29px);
+	background-color: chartreuse;
+}
+
+.footer {
+	width: 1024px;
+	height: 20px;
+	background-color: brown;
+	margin: auto;
+	border: 1px solid black;
+	border-top: 0;
+}
