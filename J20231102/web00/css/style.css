@@ -64,7 +64,7 @@
 	font-size: 24px;
 	color: #FF00FF;
 	margin-bottom: 20px;
-	border-bottom: 2px solid pink;
+	border-bottom: 2px solid black;
 	/* 使用框線下底線 */
 	/* text-decoration: underline pink;
 	text-underline-offset: 10px; */
@@ -92,6 +92,10 @@
 	padding-top: 5px;
 	/* 這個是在調整字比較往上 */
 	text-align: center;
+	font-size: 16px;
+}
+.aside-header>.box >a{
+	/* 有發現如果調整在.aside-header>.box此變更不會更動 */
 	text-decoration: none;
 }
 
@@ -131,6 +135,10 @@
 .main-footer {
 	height: calc(100% - 29px);
 	background-color: chartreuse;
+}
+iframe{
+	width: 100%;
+	height: 100%;
 }
 
 .footer {
