@@ -2,6 +2,7 @@
 	margin: 0;
 	box-sizing: border-box;
 	overflow: hidden;
+	font-family: '標楷體';
 }
 
 /* body{
@@ -9,6 +10,13 @@
 	height: 768px;
 	background-color: lightpink;
 } */
+.container-box {
+	width: 1024px;
+	height: 768px;
+	margin: auto;
+	/* background-color: aquamarine; */
+}
+
 .container {
 	display: flex;
 	flex-wrap: wrap;
@@ -19,17 +27,26 @@
 .header {
 	width: 1024px;
 	height: 65px;
-	background-color: lightgreen;
+	/* background-color: lightgreen; */
 	margin: auto;
 	border: 1px solid black;
 	border-bottom: 0;
 	/* 把下底線去除 */
+	/* 以下設定應該是當圖片未出時替代文字的對齊 */
+	text-align: center;
+	padding: 2px;
+
 }
+
+/* .header>img{
+	width: 100%;
+	text-align: center;
+} */
 
 .aside {
 	width: 215px;
 	height: calc(768px - 65px - 20px);
-	background-color: lightskyblue;
+	/* background-color: lightskyblue; */
 	display: flex;
 	flex-direction: column;
 	/* 在.aside去操作flexbox 
@@ -40,23 +57,62 @@
 	/* 把右框線去除 主要是表格內部不要有框線 */
 }
 
+.aside-title {
+	/* width: 200px; */
+	text-align: center;
+	font-weight: 500;
+	font-size: 24px;
+	color: #FF00FF;
+	margin-bottom: 20px;
+	border-bottom: 2px solid pink;
+	/* 使用框線下底線 */
+	/* text-decoration: underline pink;
+	text-underline-offset: 10px; */
+}
+
 .aside-header {
 	/* width: 215px; */
 	height: calc(100% - 25px);
 	/* 上面.aside已經定義好高度 所以可以用100%去扣 */
 	background-color: lightcyan;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.aside-header>.box {
+	width: 200px;
+	height: 35px;
+	/* 先確認底圖尺寸or圖片尺寸不符有些設定會看不到 */
+	background-color: white;
+	/* 因為圖片已經是有圓角了 所以不用特地border-radius */
+	background-image: url('/J20231102/images/menu1.png');
+	border-radius: 5px;
+	margin-bottom: 10px;
+	padding-top: 5px;
+	/* 這個是在調整字比較往上 */
+	text-align: center;
+	text-decoration: none;
+}
+
+.box:hover {
+	background-image: url('/J20231102/images/menu2.png');
 }
 
 .aside-footer {
 	height: 25px;
-	background-color: darkgoldenrod;
+	/* background-color: darkgoldenrod; */
+	font-size: 16px;
+	color: #000000;
+	font-family: '標楷體';
+	text-align: center;
 }
 
 .main {
 	width: calc(1024px - 215px);
 	/* height: calc(768px - 65px - 20px); */
 	/* aside跟main都要設高度 不能只設一邊 */
-	background-color: bisque;
+	/* background-color: bisque; */
 	/* margin: auto; */
 	border: 1px solid black;
 	display: flex;
@@ -66,7 +122,10 @@
 .main-header {
 	/* margin: 215px; */
 	height: 29px;
-	background-color: aqua;
+	/* background-color: aqua; */
+	font-size: 24px;
+	color: #0000FF;
+	font-family: '標楷體';
 }
 
 .main-footer {
