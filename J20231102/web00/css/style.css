@@ -74,7 +74,7 @@
 	/* width: 215px; */
 	height: calc(100% - 25px);
 	/* 上面.aside已經定義好高度 所以可以用100%去扣 */
-	background-color: lightcyan;
+	/* background-color: lightcyan; */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -94,7 +94,8 @@
 	text-align: center;
 	font-size: 16px;
 }
-.aside-header>.box >a{
+
+.aside-header>.box>a {
 	/* 有發現如果調整在.aside-header>.box此變更不會更動 */
 	text-decoration: none;
 }
@@ -134,9 +135,10 @@
 
 .main-footer {
 	height: calc(100% - 29px);
-	background-color: chartreuse;
+	/* background-color: chartreuse; */
 }
-iframe{
+
+iframe {
 	width: 100%;
 	height: 100%;
 	/* 這邊在設定主網頁iframe寬高 */
