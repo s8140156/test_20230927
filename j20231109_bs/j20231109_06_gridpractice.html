@@ -17,7 +17,12 @@
 				background-color: white !important;
 				/* margin: auto; */
 			}
+			.my-height{
+				height: 70vh;
+				overflow: hidden;
+			}
 			/* 把這個item當作控制下階的container */
+			/* 這是在column 控制每行 所以要設定高度 */
 			.item-1{
 				background-color: lightgreen;
 				height: 30vh;
@@ -39,7 +44,7 @@
 				text-align: center;
 				padding-top: 90px;
 			}
-			img{
+			img-1{
 				width: 100px;
 				height: 100px;
 			}
@@ -48,33 +53,37 @@
 </head>
 
 <body>
-	<div class="container-fluid my-h bg-danger">
+	<div class="container-fluid my-h bg-danger p-0">
+		<!-- p-0是把padding拿掉 預設帶有padding -->
 		<div class="row mb-3">
-			<div class="col-12 my-w item-1">
-				<img src="https://picsum.photos/id/237/200/300" alt="">
+			<div class="col-12 my-height my-w item-1">
+				<img class="img-1" class="img-1" src="https://picsum.photos/id/20/2000/768" alt="">
 		</div>
 		<div class="row mt-3 mb-3">
 			<div class="col-6 item-1">
-				<img src="https://picsum.photos/id/237/200/300" alt="">
+				<img class="img-1" src="https://picsum.photos/id/237/200/300" alt="">
 			</div>
 			<div class="col-6 item-2">
-				<img src="https://picsum.photos/id/237/200/300" alt="">
+				<img class="img-1" src="https://picsum.photos/id/237/200/300" alt="">
 			</div>
 		</div>
 		<div class="row mb-3">
 			<div class="col-4 item-1">
-				<img src="https://picsum.photos/id/237/200/300" alt="">
+				<img class="img-1" src="https://picsum.photos/id/237/200/300" alt="">
 			</div>
 			<div class="col-4 item-2">
-				<img src="https://picsum.photos/id/237/200/300" alt="">
+				<img class="img-1" src="https://picsum.photos/id/237/200/300" alt="">
 			</div>
 			<div class="col-4 item-1">
-				<img src="https://picsum.photos/id/237/200/300" alt="">
+				<img class="img-1" src="https://picsum.photos/id/237/200/300" alt="">
 			</div>
 		</div>
 		<div class="row mb-3">
 			<div class="col-8 item-1">
-				<img src="https://picsum.photos/id/237/200/300" alt="">
+				<iframe width="700" height="200" src="https://www.youtube.com/embed/iWV01UuTTP8?si=nbksjYpuspY40JuS"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen></iframe>
 			</div>
 			<div class="col-4 item-3">
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>

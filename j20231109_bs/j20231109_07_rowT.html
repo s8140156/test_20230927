@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap template</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<style>
+		.my-height-20 {
+			height: 70vh;
+			overflow: hidden;
+		}
+
+		.bg-blue {
+			background-color: lightblue;
+		}
+
+		/* 把這個item當作控制下階的container */
+		/* 這是在column 控制每行 所以要設定高度 */
+		.item-21 {
+			background-image: url {
+				'https://picsum.photos/id/22/800/600'
+			}
+
+			;
+
+		}
+
+		.item-22 {
+			background-image: url {
+				'https://picsum.photos/id/24/800/600'
+			}
+
+			;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<!-- 這個範例是用同一個container去包下面東西 -->
+		<div class="row mb-3">
+			<div class="col my-height-20 bg-blue p-0">
+				<img src="https://picsum.photos/id/20/1920/1024" alt="">
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-6 my-height-20 item-21"></div>
+				<div class="col-6 my-height-20 bg-blue item-22"></div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-4 my-height-20 bg-blue p-0">
+					<img src="https://picsum.photos/id/237/1920/1080" alt="">
+				</div>
+				<div class="col-4 my-height-20 p-0">
+					<img src="https://picsum.photos/id/237/1920/1080" alt="">
+				</div>
+				<div class="col-4 my-height-20 bg-blue p-0">
+					<img src="https://picsum.photos/id/237/1920/1080" alt="">
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-8 my-height-20 p-5">
+					<iframe class="w-100 h-100" src="https://www.youtube.com/embed/iWV01UuTTP8?si=nbksjYpuspY40JuS"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen></iframe>
+				</div>
+				<div class="col-4 my-height-20 p-5 bg-blue">
+					<div class="w-100 h-100 d-flex flex-column justify-content-center">					
+						<h3 class="text-center">Lorem, ipsum dolor.</h3>
+						<br>
+						<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
+
+				</div>
+
+
+			</div>
+		</div>
+
+
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"></script>
+</body>
+
+</html>
