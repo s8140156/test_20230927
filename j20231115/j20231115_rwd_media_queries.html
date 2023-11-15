@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- RWD透過這條展現 -->
+	<title>Document</title>
+	<style>
+		/* rwd一個重點 就是在不同尺寸時 container width寬度/item的寬度要調整 */
+		/* mobile css */
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			align-items: center;
+			/* 請注意每個元素填寫 */
+			width: 100%;
+			/* height: 80vh; */
+			/* 在rwd就不要特別設定高度 他會依不同尺寸縮放高度 */
+			margin: auto;
+			background-color: lightpink;
+		}
+
+		.item {
+			width: 80%;
+			/* mobile調整寬度 */
+			height: 300px;
+			background-color: lightcoral;
+			margin-bottom: 30px;
+		}
+
+		/* large css */
+		@media screen and (min-width: 576px) {
+
+			.container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				align-items: center;
+				/* 請注意每個元素填寫 */
+				width: 80%;
+				/* height: 80vh; */
+				margin: auto;
+				background-color: lightblue;
+			}
+
+			.item {
+				width: 45%;
+				height: 300px;
+				background-color: lightcoral;
+			}
+		}
+
+		@media screen and (min-width: 768px) {
+			.container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				align-items: center;
+				/* 請注意每個元素填寫 */
+				width: 80%;
+				/* height: 80vh; */
+				margin: auto;
+				background-color: lightgreen;
+			}
+
+			.item {
+				width: 30%;
+				height: 300px;
+				background-color: lightcoral;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="item">
+
+		</div>
+		<div class="item">
+
+		</div>
+		<div class="item">
+
+		</div>
+		<div class="item">
+
+		</div>
+		<div class="item">
+
+		</div>
+		<div class="item">
+
+		</div>
+	</div>
+
+</body>
+
+</html>
