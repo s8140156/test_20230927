@@ -11,9 +11,9 @@
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 		crossorigin="anonymous"></script>
 	<style>
-		fieldset {
-			border: 2px solid darkolivegreen;
-			color: darkolivegreen;
+		.container {
+			border: 3px solid darkolivegreen;
+			border-radius: 10px;
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 			background-color: lightgoldenrodyellow;
 			font-weight: 300;
@@ -24,96 +24,93 @@
 <body>
 	<h3 class="text-center">fieldset</h3>
 	<div class="container mt-3">
-
-
-		<div class="row">
-			<div class="col">
-				<div class="mb-3 mt-3">
-					<label for="name" class="label-form">Name</label>
-					<input type="text" name="" id="name" class="form-control">
-				</div>
-			</div>
-			<div class="col">
-				<div class="mb-3 mt-3">
-					<label for="mobile" class="label-form">Mobile</label>
-					<input type="text" name="" id="mobile" class="form-control">
-				</div>
-			</div>
+		<form action="" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col">
-					<div class="mb-3 mt-3">
-						<label for="add" class="label-form">Address</label>
-						<input type="text" name="" id="add" class="form-control">
+					<div class="mb-3 mt-4">
+						<label for="name" class="label-form">Name</label>
+						<input type="text" name="" id="name" class="form-control">
 					</div>
 				</div>
-			</div>
-			<div class="row">
 				<div class="col">
-					<label for="marriage" class="label-form">婚姻狀況</label>
-					<select name="" id="marriage" class="form-select">
-						<option selected>請選擇</option>
-						<option value="未婚">未婚</option>
-						<option value="已婚">已婚</option>
-						<option value="一言難盡">一言難盡</option>
-					</select>
+					<div class="mb-3 mt-4">
+						<label for="mobile" class="label-form">Mobile</label>
+						<input type="text" name="" id="mobile" class="form-control">
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col form-check">
-					<div class="mb-3 mt-3">
-						<label for="">年齡區間</label>
-						<div class="form-check">
-							<!-- 需要每組label, box給一組class包 -->
-							<input class="form-check-input" type="radio" name="radio" value="">
-							<label class="form-check-label" for="21~30歲">21~30歲</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="radio" value="">
-							<label class="form-check-label" for="31~40歲">31~40歲</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="radio" value="">
-							<label class="form-check-label" for="41~50歲">41~50歲</label>
+				<div class="row">
+					<div class="col">
+						<div class="mb-3 mt-3">
+							<label for="add" class="label-form">Address</label>
+							<input type="text" name="" id="add" class="form-control">
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col form-check">
-					<div class="mb-3 mt-3">
-						<label for="">專業技能(可複選)</label>
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="myCheckbox[]" id="check1">
-							<label class="form-check-label" for="check1">html</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="myCheckbox[]" id="check2">
-							<label class="form-check-label" for="check2">css</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="myCheckbox[]" id="check3">
-							<label class="form-check-label" for="check3">php</label>
+				<div class="row">
+					<div class="col">
+						<label for="marriage" class="label-form">婚姻狀況</label>
+						<select name="" id="marriage" class="form-select">
+							<option selected>請選擇</option>
+							<option value="未婚">未婚</option>
+							<option value="已婚">已婚</option>
+							<option value="一言難盡">一言難盡</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col form-check">
+						<div class="mb-3 mt-3">
+							<label for="">年齡區間</label>
+							<div class="form-check">
+								<!-- 需要每組label, box給一組class包 -->
+								<input class="form-check-input" type="radio" name="radio" value="">
+								<label class="form-check-label" for="21~30歲">21~30歲</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="radio" value="">
+								<label class="form-check-label" for="31~40歲">31~40歲</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="radio" value="">
+								<label class="form-check-label" for="41~50歲">41~50歲</label>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col form-check">
-					<div class="mb-3 mt-3">
-						<label for="check3">備註</label>
-						<textarea name="" id="myTextarea" cols="30" rows="10"></textarea>
+				<div class="row">
+					<div class="col form-check">
+						<div class="mb-3 mt-3">
+							<label for="">專業技能(可複選)</label>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" name="myCheckbox[]" id="check1">
+								<label class="form-check-label" for="check1">html</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" name="myCheckbox[]" id="check2">
+								<label class="form-check-label" for="check2">css</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" name="myCheckbox[]" id="check3">
+								<label class="form-check-label" for="check3">php</label>
+							</div>
+						</div>
 					</div>
-
 				</div>
+				<div class="row">
+					<div class="col">
+						<div class="mb-3 mt-3">
+							<label for="check3">備註</label>
+							<textarea class="form-control" name="" id="myTextarea" cols="10" rows="5"></textarea>
+						</div>
+
+					</div>
+				</div>
+
 			</div>
+			<input type="reset" value="重設">
+			<input type="submit" value="送出">
 
-		</div>
-		<input type="reset" value="重設">
-		<input type="submit" value="送出">
-
-
-
-
+		</form>
 
 	</div>
 
