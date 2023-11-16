@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Bootstrap Example</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+		.container-my-img {
+			height: 100vh;
+			/* 這邊要設高度讓 */
+			background-image: url('https://picsum.photos/id/250/1920/1080?grayscale');
+			/* 如果是找網路圖片 可以把尺寸寫上去 因為做背景底圖 */
+		}
+	</style>
+</head>
+
+<body class="container-my-img">
+
+	<div class="container-fluid mt-3">
+		<!-- 表格滿版設定container-fluid -->
+		<h2>Photos</h2>
+		<p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+		<div class="text-end">
+			<button type="button" class="btn btn-success btn-lg">&nbsp;<i class="fa-solid fa-plus"></i>&nbsp;</button>
+			<!-- &nbsp;若想要把button加長 可以用空白鍵方式擴充 但要加在fontawesome兩側喔 包在button內 -->
+		</div>
+		<table class="table table-hover text-center align-middle">
+			<!-- 這邊使用bs5 align-middle將裡面內容垂直置中 -->
+			<!-- 可以寫在table導到下面階層 需要設定高度 -->
+			<thead>
+				<!-- bs5的表格樣式 在table裡會有標題(thead) & 內容(tbody) 使用bs5需導入格式 -->
+				<tr>
+					<th width="5%">id</th>
+					<th width="30%">img_url</th>
+					<th width="20%">product_desc</th>
+					<th>operate</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						1
+					</td>
+					<td>
+						<img src="https://picsum.photos/seed/picsum/310/250" class="img-thumbnail" alt="Cinque Terre"
+							width="304" height="236">
+					</td>
+					<td class="text-start">
+
+						<p>
+							imgUrl:p1.jpp
+						</p>
+						<p>
+							太棒了這個產品
+							太棒了這個產品
+							太棒了這個產品
+						</p>
+	</div>
+	</td>
+	<td>
+		<a href="#" class="btn btn-warning"><i class="fa-solid fa-pen"></i></a>
+		<a href="#" class="btn ms-3 btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+
+		</div>
+
+	</td>
+
+	</tbody>
+	</table>
+	</div>
+
+</body>
+
+</html>
