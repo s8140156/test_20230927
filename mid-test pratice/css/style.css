@@ -1,0 +1,93 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+/* 一開始就先設定 */
+
+body {
+	/* width: 1024px;
+	height: 768px;
+	background-color: lightcyan; */
+	/* 需要把body的設定註解其他內容才可以置中 */
+}
+/* 先把body寬高設定完成 */
+
+.container {
+	width: 1024px;
+	/* 當body註解掉 要在container設定清楚寬度 */
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+	/* 記得註解body後下面三大項div要margin:auto */
+
+}
+
+
+
+.header {
+	width: 1024px;
+	/* 直接調跟外版面一樣寬 */
+	height: 65px;
+	/* background-color: lightcoral; */
+	margin: auto;
+	border: 1px solid black;
+	border-bottom: 0px;
+	text-align: center;
+}
+
+.aside {
+	width: 215px;
+	/* 直接調跟外版面一樣寬 */
+	height: calc(768px - 65px - 20px);
+	/* 注意程式寫法calc */
+	background-color: lightgreen;
+	border: 1px solid black;
+	border-right: 0px;
+	display: flex;
+	flex-direction: column;
+	/* 要設定垂直方向排列 後面aside-footer才可以掉下去 */
+}
+
+.aside-header {
+	width: 215px;
+	height: calc(100% - 25px);
+	background-color: lightpink;
+}
+.aside-footer {
+	width: 215px;
+	height: 25px;
+	background-color: darkgoldenrod;
+	/* border: 1px solid black; */
+}
+
+.main {
+	width: calc(1024px - 215px);
+	/* 直接調跟外版面一樣寬 */
+	height: calc(768px - 65px - 20px);
+	/* 注意程式寫法calc */
+	background-color: lightskyblue;
+	border: 1px solid black;
+}
+.main-header{
+	width: calc(1024px - 215px);
+	height: 29px;
+	/* 注意程式寫法calc */
+	background-color: darkcyan;
+}
+.main-footer{
+	width: calc(1024px - 215px);
+	height: calc(768px - 65px - 20px - 29px);
+	background-color: darkorange;
+}
+
+.footer {
+	width: 1024px;
+	/* 直接調跟外版面一樣寬 */
+	height: 20px;
+	background-color: lightyellow;
+	margin: auto;
+	border: 1px solid black;
+	border-top: 0px;
+}
