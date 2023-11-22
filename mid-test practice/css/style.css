@@ -110,6 +110,7 @@ body {
 	height: 29px;
 	/* 注意程式寫法calc */
 	/* background-color: darkcyan; */
+	border-bottom: 1px solid black;
 }
 .main-header>marquee{
 	color:#0000FF;
@@ -119,7 +120,7 @@ body {
 .main-footer{
 	width: calc(1024px - 215px);
 	height: calc(100% - 29px);
-	background-color: darkorange;
+	/* background-color: darkorange; */
 }
 
 .footer {
@@ -130,4 +131,8 @@ body {
 	margin: auto;
 	border: 1px solid black;
 	border-top: 0px;
+}
+iframe{
+	width: 100%;
+	height: 100%;
 }
