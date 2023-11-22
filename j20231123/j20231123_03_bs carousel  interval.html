@@ -41,8 +41,8 @@
   <script>
     var myCarousel = document.querySelector('#myCarousel')
     var carousel = new bootstrap.Carousel(myCarousel, {
-      interval: 3000,
-      wrap: false,
+      interval: 5000, //因為script寫在body尾部 雖上面已有設定秒數 但最後執行會由script最靠近的參數導入
+      wrap: false, 
       cycle:
     })
   </script>
