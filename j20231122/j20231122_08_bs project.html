@@ -7,24 +7,53 @@
 	<title>Bootstrap template</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<style>
-		body{
+		body {
 			background-color: #dceab2;
 		}
-		.col>.col-8{
+
+		.col>.col-8 {
 			/* border: 1px solid lightslategray;
 			border-radius: 10px; */
 		}
-		.col>.col-4{
+
+		.col>.col-4 {
 			/* border: 1px solid lightslategray;
 			border-radius: 10px; */
 		}
-		.row1{
+
+		.row1 {
 			display: flex;
 			flex-wrap: nowrap;
 		}
-		.carousel-indicators>button{
-			color: #aabf36;
+
+		.carousel-indicators [data-bs-target] {
+			box-sizing: content-box;
+			flex: 0 1 auto;
+			width: 30px;
+			height: 8px;
+			padding: 0;
+			margin-right: 3px;
+			margin-left: 3px;
+			text-indent: -999px;
+			cursor: pointer;
+			/* background-color: #fff; */
+			background-clip: padding-box;
+			border: 0;
+			/* border-radius: 10px; */
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			opacity: 0.5;
+			transition: opacity 0.6s ease;
+		}
+
+		.carousel-indicators>.active {
+			background-color: #8e9f2d;
+			border: 1px solid #8e9f2d;
+			border-radius: 10px;
 		}
 	</style>
 </head>
@@ -44,7 +73,13 @@
 						<a class="nav-link active" aria-current="page" href="#">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
+						<a class="nav-link" href="#theater">Theater</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#library">Library</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#information">Information</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -52,16 +87,14 @@
 							Dropdown
 						</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
-							<li>
+							<li><a class="dropdown-item" href="#">好吃的</a></li>
+							<li><a class="dropdown-item" href="#">好玩的</a></li>
+							<li><a class="dropdown-item" href="#">好買的</a></li>
+							<!-- <li>
 								<hr class="dropdown-divider">
 							</li>
-							<li><a class="dropdown-item" href="#">Something else here</a></li>
+							<li><a class="dropdown-item" href="#">Something else here</a></li> -->
 						</ul>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" aria-disabled="true">Disabled</a>
 					</li>
 				</ul>
 				<form class="d-flex" role="search">
@@ -139,55 +172,114 @@
 				</div>
 			</div>
 		</div>
-	<div class="container mb-3 mt-3">
-		<div class="row1">
-			<div class="col-8 p-1 me-2" style="border: 1px solid darkgray; border-radius: 5px;">
-				<table class="table">
-					<thead>
-					  <tr>
-						<th scope="col">#</th>
-						<th scope="col">First</th>
-						<th scope="col">Last</th>
-						<th scope="col">Handle</th>
-					  </tr>
-					</thead>
-					<tbody>
-					  <tr>
-						<th scope="row">1</th>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-					  </tr>
-					  <tr>
-						<th scope="row">2</th>
-						<td>Jacob</td>
-						<td>Thornton</td>
-						<td>@fat</td>
-					  </tr>
-					  <tr>
-						<th scope="row">3</th>
-						<td colspan="2">Larry the Bird</td>
-						<td>@twitter</td>
-					  </tr>
-					</tbody>
-				  </table>
+		<div class="row">
+			<!-- <div id="theater"></div> -->
+			<div class="col-4">
+				<div id="theater"></div>
+				<div class="card mb-3" style="width:400px">
+					<p class="text-center mt-5 display-1 text-primary-emphasis">
+						<i class="fa-solid fa-photo-film"></i>
+					</p>
+					<div class="card-body text-center">
+						<h5 class="card-title">Theatre</h5>
+						<p class="card-text">線上影城 海量影音免費下載</p>
+						<a href="#" class="btn btn-outline-primary">Go</a>
+					</div>
+				</div>
 			</div>
-			<div class="col-4 p-3" style="border: 1px solid darkgray; border-radius: 5px;">
-				<form>
-					<div class="mb-3">
-					  <label for="exampleInputEmail1" class="form-label">Email address</label>
-					  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-					  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+			<!-- <div id="library"></div> -->
+			<div class="col-4">
+				<div id="library"></div>
+				<div class="card mb-3" style="width:400px">
+					<p class="text-center mt-5 display-1 text-success">
+						<i class="fa-solid fa-book"></i>
+					</p>
+					<div class="card-body text-center">
+						<h5 class="card-title">Library</h5>
+						<p class="card-text">線上書城 百萬名著免費下載</p>
+						<a href="#" class="btn btn-outline-success">Go</a>
 					</div>
-					<div class="mb-3">
-					  <label for="exampleInputPassword1" class="form-label">Password</label>
-					  <input type="password" class="form-control" id="exampleInputPassword1">
+				</div>
+			</div>
+			<!-- <div id="information"></div> -->
+			<div class="col-4">
+				<div id="information"></div>
+				<div class="card mb-3" style="width:400px">
+					<p class="text-center mt-5 display-1 text-warning">
+						<i class="fa-solid fa-circle-info"></i>
+					</p>
+					<div class="card-body text-center">
+						<h5 class="card-title">Information</h5>
+						<p class="card-text">線上服務 隨時傾聽你的聲音</p>
+						<a href="#" class="btn btn-outline-warning">Go</a>
 					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
-				  </form>
+				</div>
 			</div>
 		</div>
-	</div>
+		<div class="container mb-3 mt-3">
+			<div class="row1">
+				<div class="col-8 p-1 me-2" style="border: 1px solid darkgray; border-radius: 5px;">
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">Rank</th>
+								<th scope="col">本週排名</th>
+								<th scope="col">上週排名</th>
+								<th scope="col">影城</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>信徒2</td>
+								<td>信徒2</td>
+								<td>國賓戲院</td>
+
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>畢業有蜥望</td>
+								<td> -- </td>
+								<td>華威影城</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>殺手</td>
+								<td>密弒遊戲</td>
+								<td>欣欣影院</td>
+							</tr>
+							<tr>
+								<th scope="row">4</th>
+								<td>密弒遊戲</td>
+								<td>關於我和鬼變成家人的那件事</td>
+								<td>威秀影院</td>
+							</tr>
+							<tr>
+								<th scope="row">5</th>
+								<td>關於我和鬼變成家人的那件事</td>
+								<td>殺手</td>
+								<td>樂聲影院</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-4 p-3" style="border: 1px solid darkgray; border-radius: 5px;">
+					<form>
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Email address</label>
+							<input type="email" class="form-control" id="exampleInputEmail1"
+								aria-describedby="emailHelp">
+							<div id="emailHelp" class="form-text"></div>
+						</div>
+						<div class="mb-3">
+							<label for="exampleInputPassword1" class="form-label">Password</label>
+							<input type="password" class="form-control" id="exampleInputPassword1">
+						</div>
+						<button type="submit" class="btn btn-primary">Login</button>
+					</form>
+				</div>
+			</div>
+		</div>
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
