@@ -34,7 +34,7 @@
 			box-sizing: content-box;
 			flex: 0 1 auto;
 			width: 30px;
-			height: 8px;
+			height: 10px;
 			padding: 0;
 			margin-right: 3px;
 			margin-left: 3px;
@@ -54,6 +54,10 @@
 			background-color: #8e9f2d;
 			/* border: 1px solid #8e9f2d; */
 			/* border-radius: 10px; */
+		}
+		.btn-primary{
+			background-color: lightpink !important;
+			border-color: lightpink !important;
 		}
 	</style>
 </head>
@@ -104,6 +108,7 @@
 			</div>
 		</div>
 	</nav>
+
 	<div class="container-fluid mb-3 mt-3">
 		<div class="box">
 			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -137,6 +142,13 @@
 					<span class="visually-hidden">Next</span>
 				</button>
 			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="clear-fix">
+			<button type="button" class="btn btn-primary float-end btn-lg" data-bs-toggle="modal" data-bs-target="#myModal1">
+				滿意度調查
+			</button>
 		</div>
 	</div>
 	<div class="container mb-3 mt-3">
@@ -279,6 +291,121 @@
 					</form>
 				</div>
 			</div>
+		</div>
+
+		<div class="modal " id="myModal1">
+			<!-- modal-fullscreen是under在class=modal-dialog -->
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+	
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title">滿意度調查</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+					</div>
+	
+					<!-- Modal body -->
+					<div class="modal-body">
+						<div class="container mt-3">
+							<form action="" enctype="multipart/form-data">
+								<div class="row">
+									<div class="col">
+										<div class="mb-3 mt-4">
+											<label for="name" class="label-form">Name</label>
+											<input type="text" name="" id="name" class="form-control">
+										</div>
+									</div>
+									<div class="col">
+										<div class="mb-3 mt-4">
+											<label for="mobile" class="label-form">Mobile</label>
+											<input type="text" name="" id="mobile" class="form-control">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="mb-3 mt-3">
+												<label for="add" class="label-form">Address</label>
+												<input type="text" name="" id="add" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<label for="marriage" class="label-form">婚姻狀況</label>
+											<select name="" id="marriage" class="form-select">
+												<option selected>請選擇</option>
+												<option value="未婚">未婚</option>
+												<option value="已婚">已婚</option>
+												<option value="一言難盡">一言難盡</option>
+											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col form-check">
+											<div class="mb-3 mt-3">
+												<label for="">網站滿意度</label>
+												<div class="form-check">
+													<!-- 需要每組label, box給一組class包 -->
+													<input class="form-check-input" type="radio" name="radio" value="">
+													<label class="form-check-label" for="5">5分 非常滿意</label>
+												</div>
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="radio" value="">
+													<label class="form-check-label" for="4">4分 普通滿意</label>
+												</div>
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="radio" value="">
+													<label class="form-check-label" for="3">3分 普通</label>
+												</div>
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="radio" value="">
+													<label class="form-check-label" for="2">2分 尚可</label>
+												</div>
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="radio" value="">
+													<label class="form-check-label" for="1">1分 非常不滿意</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="mb-3 mt-3">
+												<label for="check3">請寫下您的想法</label>
+												<textarea class="form-control" name="" id="myTextarea" cols="10" rows="5" placeholder="您的意見是我們進步的動力"></textarea>
+											</div>
+					
+										</div>
+									</div>
+					
+								</div>
+								<input type="reset" value="重設">
+								<input type="submit" value="送出">
+					
+							</form>
+					
+						</div>
+					</div>
+	
+					<!-- Modal footer -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+					</div>
+	
+				</div>
+			</div>
+		</div>
+	<div class="container-fluid">
+		<footer class="bg-body-tertiary text-center text-lg-start">
+			<!-- Copyright -->
+			<div class="text-center p-3" style="background-color: #aabf36;">
+				© 2023 Copyright:
+				<a class="text-body" href="https://Julie.Inc/">Julie.Inc</a>
+			</div>
+			<!-- Copyright -->
+			</footer>
+	</div>
+
 		</div>
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
