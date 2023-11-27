@@ -63,10 +63,27 @@
 		</div>
 	  </nav>
 
+      <!-- 把breadcrumb套用在頁面上 -->
+      <!-- 看起來如果要讓breadcrumb與下面內容排版一致 要加container去設定版面 -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Students</a></li>
+              <li class="breadcrumb-item active" aria-current="page">create</li>
+          </ol>
+      </nav>
+    </div>
+    <br>
     <div class="container mt-3">
         <h2>Products</h2>
         <p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:</p>
         <div class="text-end">
+            <!-- modal button 若是簡單表單 可用modal button方式插入表單顯示 -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal1">
+                Open modal
+            </button>
+            <!-- modal button end -->
             <button type="button" class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
         </div>
         <table class="table table-hover text-center">
@@ -126,6 +143,76 @@
             </tbody>
         </table>
     </div>
+
+    <!-- 獨立一個區域放modal內容 -->
+    	<!-- The Modal -->
+		<!--  當要顯示不同modal size時 button "data-bs-target"要與"id"搭配整組調整 不然樣式不會套用 -->
+	<div class="modal " id="myModal1">
+		<!-- modal-fullscreen是under在class=modal-dialog -->
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Modal Heading</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+                    <div class="text-end">
+                        <a href="./index.html" class="btn btn-info"><i class="fa-solid fa-house"></i></a>
+                    </div>
+                    <form action="/action_page.php">
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <div class="mb-3 mt-3">
+                                    <label for="text">File:</label>
+                                    <input type="file" class="form-control" id="file" name="file">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label for="text">Photo Description:</label>
+                                    <input type="text" class="form-control" id="text" placeholder="Enter Description" name="text">
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <div class="mb-3">
+                                    <label for="text">Price:</label>
+                                    <input type="text" class="form-control" id="text" placeholder="Enter Price" name="text">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="mb-3">
+                                    <label for="text">Unit:</label>
+                                    <input type="text" class="form-control" id="text" placeholder="Enter Unit" name="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="d-grid">
+                                    <button type="button" class="btn btn-primary btn-block">Submit</button>
+                                  </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+
+        </div>
+	</div>
 
 </body>
 

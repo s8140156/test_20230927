@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap template</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+		<style>
+			.modal4 {
+  --bs-modal-zindex: 1055;
+  --bs-modal-width: 500px;
+  --bs-modal-padding: 1rem;
+  --bs-modal-margin: 0.5rem;
+  --bs-modal-color: red;
+  --bs-modal-bg: var(--bs-body-bg);
+  --bs-modal-border-color: var(--bs-border-color-translucent);
+  --bs-modal-border-width: var(--bs-border-width);
+  --bs-modal-border-radius: var(--bs-border-radius-lg);
+  --bs-modal-box-shadow: var(--bs-box-shadow-sm);
+  --bs-modal-inner-border-radius: calc(var(--bs-border-radius-lg) - (var(--bs-border-width)));
+  --bs-modal-header-padding-x: 1rem;
+  --bs-modal-header-padding-y: 1rem;
+  --bs-modal-header-padding: 1rem 1rem;
+  --bs-modal-header-border-color: var(--bs-border-color);
+  --bs-modal-header-border-width: var(--bs-border-width);
+  --bs-modal-title-line-height: 1.5;
+  --bs-modal-footer-gap: 0.5rem;
+  --bs-modal-footer-bg: ;
+  --bs-modal-footer-border-color: var(--bs-border-color);
+  --bs-modal-footer-border-width: var(--bs-border-width);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--bs-modal-zindex);
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+		</style>
+</head>
+
+<body>
+	<div class="container mt-3">
+		<h3>Modal Example</h3>
+		<p>Click on the button to open the modal.</p>
+		<!--  當要顯示不同modal size時 button "data-bs-target"要與下面id搭配整組 -->
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal1">
+			Open modal
+		</button>
+		<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal2">
+			Open modal
+		</button>
+		<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal3">
+			Open modal
+		</button>
+		<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModal4">
+			Open modal
+		</button>
+	</div>
+
+	<!-- The Modal -->
+		<!--  當要顯示不同modal size時 button "data-bs-target"要與"id"搭配整組調整 不然樣式不會套用 -->
+	<div class="modal " id="myModal1">
+		<!-- modal-fullscreen是under在class=modal-dialog -->
+		<div class="modal-dialog modal-fullscreen">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Modal Heading</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					Modal body..
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- modal-sm/lg是under在class=modal (比fullscreen更上一層喔!!) -->
+	<div class="modal modal-lg " id="myModal2">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Modal Heading</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					Modal body..
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Close</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="modal modal-sm " id="myModal3">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Modal Heading</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					Modal body..
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="modal4 modal-lg" id="myModal4">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Modal Heading</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+					  <div class="row">
+						<div class="col-md-4">.col-md-4</div>
+						<div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
+					  </div>
+					  <div class="row">
+						<div class="col-md-3 ms-auto">.col-md-3 .ms-auto</div>
+						<div class="col-md-2 ms-auto">.col-md-2 .ms-auto</div>
+					  </div>
+					  <div class="row">
+						<div class="col-md-6 ms-auto">.col-md-6 .ms-auto</div>
+					  </div>
+					  <div class="row">
+						<div class="col-sm-9">
+						  Level 1: .col-sm-9
+						  <div class="row">
+							<div class="col-8 col-sm-6">
+							  Level 2: .col-8 .col-sm-6
+							</div>
+							<div class="col-4 col-sm-6">
+							  Level 2: .col-4 .col-sm-6
+							</div>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+				</div>
+				  
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
