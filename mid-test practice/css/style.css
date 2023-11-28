@@ -127,10 +127,13 @@ body {
 	width: 1024px;
 	/* 直接調跟外版面一樣寬 */
 	height: 20px;
-	background-color: lightyellow;
+	/* background-color: lightyellow; */
 	margin: auto;
 	border: 1px solid black;
 	border-top: 0px;
+	font-size: 16px;
+	color:#000000;
+	text-align: center;
 }
 iframe{
 	width: 100%;
