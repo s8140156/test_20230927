@@ -18,7 +18,7 @@ body {
 	width: 1024px;
 	/* 當body註解掉 要在container設定清楚寬度 */
 	display: flex;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 	margin: auto;
 	/* 記得註解body後下面三大項div要margin:auto */
 
