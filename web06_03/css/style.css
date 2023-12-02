@@ -1,0 +1,106 @@
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: '標楷體';
+}
+
+.header{
+    width: 1024px;
+    height:65px;
+    /* background-color: antiquewhite; */
+    margin: auto;
+    border: 1px solid gray;
+    border-bottom: 0;
+    text-align: center;
+}
+.container{
+    width: 1024px;
+    height:calc(768px - 65px - 20px);
+    /* background-color: lightgrey; */
+    margin: auto;
+    display: flex;
+
+}
+.aside{
+    width: 215px;
+    height:calc(768px - 65px - 20px);
+    /* background-color: darkgray; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid gray;
+    border-right: 0;
+}
+.aside-header{
+    width: 215px;
+    height:calc(100% - 25px);
+    /* background-color: darkcyan; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.aside-header>.box{
+    font-size: 24px;
+    border-bottom: 1px solid black;
+    color:#FF00FF;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+.box-1{
+    width:200px;
+    height:35px;
+    background-image: url('../images/menu1.png');
+    text-align: center;
+    margin-bottom: 10px;
+    padding-top: 5px;
+}
+.box-1:hover{
+    background-image: url('../images/menu2.png');
+    cursor: pointer;
+}
+
+.aside-footer{
+    width: 215px;
+    height:25px;
+    /* background-color: lightpink; */
+    border-top: 1px solid gray;
+    text-align: center;
+    color: 16px;
+}
+.main{
+    width: calc(1024px - 215px);
+    height:calc(768px - 65px - 20px);
+    /* background-color: lightcoral; */
+    border: 1px solid gray;
+}
+.main-header{
+    width: calc(1024px - 215px);
+    height:29px;
+    /* background-color: lightskyblue; */
+    border-bottom: 1px solid gray;
+    font-size: 24px;
+    color:#0000FF;
+}
+.main-footer{
+    width: calc(1024px - 215px);
+    height:calc(100% - 29px);
+    background-color: darkorange;
+    
+}
+.footer{
+    width: 1024px;
+    height:20px;
+    /* background-color: lightskyblue; */
+    margin: auto;
+    border: 1px solid gray;
+    text-align: center;
+    font-size: 16px;
+
+}
+iframe{
+    width: 100%;
+    height: 100%;
+}
