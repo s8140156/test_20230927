@@ -1,0 +1,122 @@
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: "標楷體";
+}
+
+.header{
+    width: 1024px;
+    height:65px;
+    margin:auto;
+    /* background-color: lightpink; */
+    text-align: center;
+    border: 1px solid black;
+    border-bottom: 0px;
+}
+
+
+.container{
+    width: 1024px;
+    height:calc(768px - 65px - 20px);
+    margin:auto;
+    /* background-color: lightcoral; */
+    display: flex;
+}
+
+.aside{
+    width: 215px;
+    height:calc(768px - 65px - 20px);
+    /* background-color: lightgreen; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aside-header{
+    width: 215px;
+    height:calc(100% - 25px);
+    /* background-color: darkgoldenrod;  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;    
+    border: 1px solid black;
+    border-bottom:0;
+}
+.box-1{
+    font-size: 24px;
+    color: #FF00FF;
+    border-bottom: 1px solid black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.aside-header>.box{
+    width: 200px;
+    height: 35px;
+    background-image: url('../images/menu1.png');
+    margin-top: 10px;
+    padding-top: 5px;
+    font-size: 16px;
+    color: #000000;
+
+}
+.aside-header>.box:hover{
+
+    background-image: url('../images/menu2.png');
+    cursor: pointer;
+
+
+}
+
+.aside-footer{
+    width: 215px;
+    height:25px;
+    /* background-color: darkgrey;  */
+    font-size: 16px;
+    color: #000000;
+    border: 1px solid black;
+
+}
+
+.main{
+    width: calc(1024px - 215px);
+    height:calc(768px - 65px - 20px);
+    /* background-color: darkgrey;  */
+}
+.main-header{
+    width: calc(1024px - 215px);
+    height:29px;
+    /* background-color: lightcyan;  */
+    font-size: 24px;
+    color: #0000FF;
+    border: 1px solid black;
+    border-left:0;
+}
+
+.main-footer{
+    width: calc(1024px - 215px);
+    height: calc(100% - 29px);
+    /* background-color: lightseagreen;  */
+    border: 1px solid black;
+    border-top:0;
+    border-left:0;
+
+}
+.footer{
+    width: 1024px;
+    height: 20px;
+    /* background-color: lightgoldenrodyellow;  */
+    margin: auto;
+    text-align: center;
+    color: black;
+    border: 1px solid black;
+    border-top:0;
+
+}
+iframe{
+    width: 100%;
+    height: 100%;
+}
