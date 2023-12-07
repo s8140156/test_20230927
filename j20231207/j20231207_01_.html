@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap template</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+	<h2>JavaScript Window</h2>
+
+	<p id="demo"></p>
+
+	<button type="button" id="myBtn">myBtn</button>
+	<button type="button" id="closeBtn">closeBtn</button>
+
+	<script>
+		let myBtn = document.getElementById('myBtn');
+		let closeBtn = document.getElementById('closeBtn');
+
+		myBtn.addEventListener('click', function () {
+			// window.open('http://w3schools.com'); //跳新頁面
+			// window.location.assign('http://w3schools.com'); //相當於php header轉址
+			location.replace('http://w3schools.com'); //replace無法回上一頁喔
+			// window可以省略不寫 執行出來功能一樣
+		});
+
+
+		// document.getElementById("demo").innerHTML =
+		// 	"Browser inner window width: " + window.innerWidth + "px<br>" +
+		// 	"Browser inner window height: " + window.innerHeight + "px";
+	</script>
+
+
+</body>
+
+</html>
