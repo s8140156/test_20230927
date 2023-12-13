@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<style>
+		.my-container {
+			position: relative;
+			height: 70vh;
+			overflow: hidden;
+			background-color: aqua;
+		}
+
+		.box {
+			left: -200px;
+			bottom: -240px;
+			/*從左下角開始 在動畫還沒開始前先設定初始位置*/
+			position: absolute;
+			width: 300px;
+			height: 300px;
+			background-color: lightpink;
+
+		}
+
+		.my-animation {
+			position: absolute;
+			animation: ani infinite;
+			animation-direction: alternate-reverse;
+			animation-duration: 5s;
+			/* background-image: url('./img/dog.gif'); */
+		}
+
+		@keyframes ani {
+			0% {
+				left: -200px;
+				bottom: -240px;
+			}
+
+			25% {
+				transform: rotate(180deg);
+				background-color: brown;
+			}
+
+			50% {
+				/* 我剛沒成功是因為沒有設定移動位置 所以只在原地旋轉 */
+				left: 1200px;
+				bottom: 1100px;
+				transform: rotate(360deg);
+				background-color: bisque;
+
+			}
+
+			75% {
+				transform: rotate(180deg);
+				background-color: darkgoldenrod
+			}
+
+
+			100% {
+				left: -200px;
+				bottom: -240px;
+
+
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container my-container mt-5">
+		<div class="row">
+			<div class="col">
+				<div class="box my-animation"></div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script>
+
+
+
+	</script>
+
+</body>
+
+</html>
