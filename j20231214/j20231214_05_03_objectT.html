@@ -58,8 +58,8 @@
       'love': ['html', 'css', 'js', 'php']
     };
 
-    const keyID = document.getElementById('keyID');
-    const valueID = document.getElementById('valueID');
+    // const keyID = document.getElementById('keyID');
+    // const valueID = document.getElementById('valueID');
 
     const name = document.getElementById('name');
     const mobile = document.getElementById('mobile');
@@ -67,19 +67,21 @@
     const loves = document.getElementById('loves');
 
 
-    console.log('obj', obj);
-    console.log('obj["s1"]', obj['s1']);
-    console.log('obj.s1', obj.s1);
-    console.log('obj.arr', obj.arr);
+    // console.log('obj', obj);
+    // console.log('obj["s1"]', obj['s1']);
+    // console.log('obj.s1', obj.s1);
+    // console.log('obj.arr', obj.arr);
     // console.log('obj->s1', obj->s1);
-    console.log('obj typeof', typeof (obj));
-    keyID.innerHTML = 's1';
-    valueID.innerHTML = obj.s1;
+    // console.log('obj typeof', typeof (obj));
+    // keyID.innerHTML = 's1';
+    // valueID.innerHTML = obj.s1;
 
     console.log('name', name);
     console.log('mobile', mobile);
     console.log('address', address);
     name.value = studentObj.name;
+    // input:id="name",.value用來獲取input元素的值
+    // 這行程式碼的作用是將studentObj物件中的名字屬性的值賦給具有特定id的HTML元素（可能是input 欄位）的值，從而更新該表單元素的內容
     mobile.value = studentObj.mobile;
     address.value = studentObj.address;
     console.log(studentObj);
@@ -88,7 +90,14 @@
     let option = document.createElement("option");
     // 節點 設定
     option.text = studentObj.love[0];
+    // 這個程式會顯示在畫面上(下拉選單html)
     option.value = studentObj.love[0];
+    // 這個程式會顯示在F12_element(console左邊) 當被註解時 顯示如下 但不影響畫面(畫面的顯示是上面程式)
+    // 註解狀態：<option>html</option>
+    // 正常狀態：<option value="html">html</option>
+
+    console.log(option.text);
+    console.log(option.value);
     // select append
     loves.appendChild(option);
 
@@ -99,6 +108,8 @@
     option1.value = studentObj.love[1];
     // select append
     loves.appendChild(option1);
+
+
 
 
     // let option2 = document.createElement("option");
