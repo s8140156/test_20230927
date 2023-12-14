@@ -18,7 +18,7 @@
 			height: 200px;
 			justify-content: space-around;
 			align-items: center;
-			border: 1px solid black;
+			border: 2px solid darkgray;
 			position: relative;
 		}
 
@@ -93,18 +93,20 @@
 		<div class="mb-5">
 			<!-- <h1 class="text-center text-warning ">紅 綠 燈</h1> -->
 		</div>
-		<div class="row">
+		<div class="row" style="width:1000px; margin:auto;">
+			<!-- 參考rudy寫法 想要把紅綠燈置中 要設定寬度後 在margin auto -->
 			<div class="col">
 				<div class="box rounded-pill">
-					<div id="light1" class="item bg-danger rounded-circle">
+					<div id="light1" class="item bg-secondary rounded-circle">
 					</div>
-					<div id="light2" class="item bg-danger rounded-circle">
+					<div id="light2" class="item bg-secondary rounded-circle">
 					</div>
-					<div id="light3" class="item bg-danger rounded-circle">
+					<div id="light3" class="item bg-secondary rounded-circle">
 					</div>
 				</div>
 			</div>
-			<div class="col">
+			<div class="col mt-4 ms-5">
+				<!-- 在這裡調整button與隔壁紅綠燈間距 -->
 				<button type="button" id="myBtn" class="btn btn-success btn-lg mt-5">阿飄過馬路</button>
 
 			</div>
@@ -159,32 +161,32 @@
 			// time start
 			// 老師示範是紅燈在按下按鈕後分次變綠燈
 			setTimeout(function () {
-				light1.setAttribute('class', 'item bg-success rounded-circle');
+				light1.setAttribute('class', 'item bg-danger rounded-circle');
 			}, 2500);
 
 			setTimeout(function () {
-				light2.setAttribute('class', 'item bg-success rounded-circle');
-			}, 3000);
+				light2.setAttribute('class', 'item bg-warning rounded-circle');
+			}, 5000);
 
 			//第三顆綠燈出來後 圖片跟著出現
 			setTimeout(function () {
 				light3.setAttribute('class', 'item bg-success rounded-circle');
 				myImg.setAttribute('class', 'd-block');
 				myImg.setAttribute('class', 'myImgAnimation');
-			}, 3500);
+			}, 7500);
 			// time end
 
 			// red
 			//這邊是動作做完後等10秒 恢復原先狀態
 			setTimeout(function () {
-				light1.setAttribute('class', 'item bg-danger rounded-circle');
-				light2.setAttribute('class', 'item bg-danger rounded-circle');
-				light3.setAttribute('class', 'item bg-danger rounded-circle');
+				light1.setAttribute('class', 'item bg-secondary rounded-circle');
+				light2.setAttribute('class', 'item bg-secondary rounded-circle');
+				light3.setAttribute('class', 'item bg-secondary rounded-circle');
 
 				initFun();
 				//這邊是圖片的動作 重複動作用function取代
 
-			}, 13500);
+			}, 17500);
 
 		});
 
