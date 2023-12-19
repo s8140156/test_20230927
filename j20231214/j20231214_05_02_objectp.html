@@ -26,27 +26,27 @@
 
 <body>
 
-	<h3 class="text-center">fieldset</h3>
+	<h3 class="text-center mt-3">HR Form</h3>
 	<div class="container mt-3">
 		<form action="" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col">
 					<div class="mb-3 mt-4">
 						<label for="name" class="label-form">Name</label>
-						<input type="text" name="" id="myName" class="form-control">
+						<input type="text" name="" id="name" class="form-control">
 					</div>
 				</div>
 				<div class="col">
 					<div class="mb-3 mt-4">
 						<label for="mobile" class="label-form">Mobile</label>
-						<input type="text" name="" id="myMobile" class="form-control">
+						<input type="text" name="" id="mobile" class="form-control">
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
 						<div class="mb-3 mt-3">
-							<label for="add" class="label-form">Address</label>
-							<input type="text" name="" id="myAdd" class="form-control">
+							<label for="address" class="label-form">Address</label>
+							<input type="text" name="" id="address" class="form-control">
 						</div>
 					</div>
 				</div>
@@ -54,10 +54,10 @@
 					<div class="col">
 						<label for="marriage" class="label-form">婚姻狀況</label>
 						<select name="" id="marriage" class="form-select">
-							<option selected>請選擇</option>
-							<option value="未婚">未婚</option>
+							<option value="value">請選擇</option>
+							<!-- <option value="未婚">未婚</option>
 							<option value="已婚">已婚</option>
-							<option value="一言難盡">一言難盡</option>
+							<option value="一言難盡">一言難盡</option> -->
 						</select>
 					</div>
 				</div>
@@ -124,30 +124,70 @@
 
 	<script>
 
-		let obj = {
-			's1': 'amy',
-			's2': 'bob',
-			's3': 'cat',
-			'arr': ['a1', 'a2', 'a3']
+		// let obj = {
+		// 	's1': 'amy',
+		// 	's2': 'bob',
+		// 	's3': 'cat',
+		// 	'arr': ['a1', 'a2', 'a3']
 
-		};
+		// };
 		let hrobj = {
-			's1': 'amy',
-			's2': 'bob',
-			's3': 'cat',
-			'arr': ['a1', 'a2', 'a3']
+			'name': 'Julie Chen',
+			'mobile': '09xx-xxx-xxx',
+			'address': '台北市天龍國',
+			'arr': ['未婚', '已婚', '一言難盡']
 
 		};
 		// 結束有分號
-		const keyID = document.getElementById('keyID');
-		const valueID = document.getElementById('valueID');
+		const name = document.getElementById('name');
+		const mobile = document.getElementById('mobile');
+		const address = document.getElementById('address');
+		const marriage = document.getElementById('marriage');
 
-		console.log('obj', obj);
-		console.log('obj["s1"]', obj['s1']);
-		console.log('obj.s1', obj.s1);
-		// console.log('obj->s1',obj->s1);
-		// js不支持obj->s1這類格式
-		console.log('obj typeof', typeof (obj));
+
+
+		console.log('name', name);
+		console.log('hrobj["name"]', hrobj['name']);
+		console.log('hrobj.name', hrobj.name);
+		console.log('hrobj typeof', typeof (hrobj));
+
+		name.value = hrobj.name;
+		mobile.value = hrobj.mobile;
+		address.value = hrobj.address;
+
+		let option = document.createElement('option');
+
+		option.text = hrobj.arr[0];
+		option.value = hrobj.arr[0];
+
+		console.log(option.text);
+		console.log(option.value);
+
+		marriage.appendChild(option);
+
+		let option1 = document.createElement('option');
+		// Element(option是指下拉式選單元素 不是變數)
+
+		option1.text = hrobj.arr[1];
+		option1.value = hrobj.arr[1];
+
+		console.log(option1.text);
+		console.log(option1.value);
+
+		marriage.appendChild(option1);
+
+		let option2 = document.createElement('option');
+		// Element(option是指下拉式選單元素 不是變數)
+
+		option2.text = hrobj.arr[2];
+		option2.value = hrobj.arr[2];
+
+		console.log(option2.text);
+		console.log(option2.value);
+
+		marriage.appendChild(option2);
+
+
 
 		keyID.innerHTML = 's1';
 		valueID.innerHTML = obj.s1;
