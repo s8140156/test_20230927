@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+	<input type="text" name="" id="num1">
+	<input type="text" name="" id="num2">
+	<button type="submit" id="myBtn">submit</button>
+	<span id="mySpan">the result is...</span>
+
+
+	<script>
+
+		// let num1 = 2000;
+		// let num2 = 1000;
+
+		let calObj={
+			num1:100,
+			num2:50,
+			
+			sumFun: function(){
+				// let result=num1+num2;
+				//這種寫法不會使用物件內的變數 會使用到外部變數(如果有宣告)
+				let result=this.num1+this.num2;
+				// 登登 這時候終於懂甚麼是this惹 要使用裡面的變數 需要加"this"來引用這個物件裡面的東西 
+				return result;
+				//外部要引用裡面function要使用return傳回值喔 別忘記
+				console.log(`num1+num2=${result}`);
+				// 因為裡面要放變數 所以引號要用``
+			},
+			//這應該是在物件裡面的寫法 要記 注意funciton寫法 後面有多個funcion連接時 最後要加","
+			subFun: function(){				
+				let result=this.num1-this.num2;
+				return result;
+
+				console.log(`num1-num2=${result}`);
+			},
+			multiFun: function(){				
+				let result=this.num1*this.num2;
+				return result;
+
+				console.log(`num1*num2=${result}`);
+			},
+			// divFun: function(){				
+			// 	let result=this.num1/this.num2;
+			// 	return result;
+				
+			// 	console.log(`num1/num2=${result}`);
+			// }
+			divFun: () => calObj.num1/calObj.num2
+			//使用arrow function
+
+		}
+
+		let num1=document.getElementById('num1');
+		let num2=document.getElementById('num2');
+		let myBtn=document.getElementById('myBtn');
+		let mySpan=document.getElementById('mySpan');
+		console.log('num1', num1);
+		console.log('num2', num2);
+		console.log('myBtn', myBtn);
+		console.log('mySpan', mySpan);
+
+
+
+		myBtn.addEventListener('click',function(){
+			let num1Value= Number(num1.value);
+			let num2Value= Number(num2.value);
+			calObj.num1=num1Value;
+			calObj.num2=num2Value;
+			//ㄟ這邊要記得將物件裡的變數改為自己的變數捏 不然後面不會帶進來(畫面上)
+			console.log('num1Value', num1Value);
+			// let result=num1Value+num2Value;
+			// console.log('num1Value+num2Value', num1Value+num2Value);
+			// mySpan.innerText=calObj.sumFun();
+			// mySpan.innerText=calObj.multiFun();
+			let getSum=calObj.sumFun();
+			let getSub=calObj.subFun();
+			let getMulti=calObj.multiFun();
+			let getDiv=calObj.divFun();
+	
+			//這邊不是寫.value是改寫.innerText 後面是拉calObj的funciton
+
+			mySpan.innerHTML=`
+				${num1Value}+${num2Value}=${getSum};<br>
+				${num1Value}-${num2Value}=${getSub};<br>
+				${num1Value}*${num2Value}=${getMulti};<br>
+				${num1Value}/${num2Value}=${getDiv};<br>
+			`
+		})
+
+
+
+
+	</script>
+
+</body>
+
+</html>
