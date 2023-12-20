@@ -25,10 +25,12 @@
 
 	<script>
 
+		//init data
+
 		// let num1 = 2000;
 		// let num2 = 1000;
 
-		let calObj={
+		const calObj={
 			num1:100,
 			num2:50,
 			
@@ -63,9 +65,14 @@
 			// }
 			divFun: () => calObj.num1/calObj.num2
 			//使用arrow function
+			//有發現這個函式如果加;會造成console有出現uncaught syntaxerror(然後程式無法執行)並ide也會出現紅字顯示
+			//這個箭頭函式只有一行，計算 calObj.num1/calObj.num2 並隱式返回這個值。
+			//由於這是一個單一表達式，在箭頭後面加上分號會導致語法錯誤。
+			//當函式體只有一行時，可以省略花括號 "{}" 和 "return" 關鍵字，直接寫在箭頭後面。這樣的箭頭函式叫做「隱式返回」。
 
 		}
 
+		//綁定
 		let num1=document.getElementById('num1');
 		let num2=document.getElementById('num2');
 		let myBtn=document.getElementById('myBtn');
@@ -76,9 +83,10 @@
 		console.log('mySpan', mySpan);
 
 
-
+		//動作
 		myBtn.addEventListener('click',function(){
 			let num1Value= Number(num1.value);
+			//value是input標籤的屬性，表示用戶輸入的值。
 			let num2Value= Number(num2.value);
 			calObj.num1=num1Value;
 			calObj.num2=num2Value;
@@ -88,12 +96,12 @@
 			// console.log('num1Value+num2Value', num1Value+num2Value);
 			// mySpan.innerText=calObj.sumFun();
 			// mySpan.innerText=calObj.multiFun();
+			//這邊不是寫.value是改寫.innerText 後面是拉calObj的funciton
 			let getSum=calObj.sumFun();
 			let getSub=calObj.subFun();
 			let getMulti=calObj.multiFun();
 			let getDiv=calObj.divFun();
 	
-			//這邊不是寫.value是改寫.innerText 後面是拉calObj的funciton
 
 			mySpan.innerHTML=`
 				${num1Value}+${num2Value}=${getSum};<br>
