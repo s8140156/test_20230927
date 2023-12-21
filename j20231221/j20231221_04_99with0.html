@@ -19,39 +19,50 @@
 
 <body>
 
-	do while練習
 
+	for 99乘法表補0版
+	<span id="mySpan"></span>
 
 
 	<script>
 
-		//do while寫法
-		let i = 1;
-		let sum = 0;
-		do {
-			sum += i;
-			console.log('i', i);
+		let tmp=5;
+		let changeTmp=tmp.toString().padStart(2,'0');
+		//先將數值轉字串(toString())=>padStart(長度 總共2個字,'加甚麼樣字串')
+		console.log('tmp', tmp);
+		console.log('tmp typeof', typeof (tmp));
+		console.log('changeTmp', changeTmp);
+		console.log('changeTmp typeof', typeof (changeTmp));
+
+
+		let mySpan = document.getElementById('mySpan');
+		console.log('mySpan', mySpan);
+
+
+		let result = "";
+		for (let j = 1; j <= 9; j++) {
+			// console.log('j', j);
+			let sum = "";
+			for (let i = 1; i <= 9; i++) {
+				// console.log('i', i);
+				// sum += `${j}*${i}=${j * i} | `;
+				let tmpJ=j.toString().padStart(2,'0');
+				let tmpI=i.toString().padStart(2,'0');
+				let tmpSum=(j*i).toString().padStart(2,'0');
+				sum += `${tmpJ}*${tmpI}=${tmpSum} | `;
+
+			}
+			result += `<br>${sum}`;
+
+
 			console.log('sum', sum);
-			i++;
-			//靠 這都有順序的 i++條件要放最下面才行 不然console會顯示他run到=11
-			//其實是顯示順序的問題 當i第10圈跑完時 其實會"繼續"執行第11圈(只是判斷到最後發現只有到10會停止), 
-			//但如果i++比console.log先放, 只是先顯示第11個變數 那就不必要
+			console.log('result', result);
 		}
-		//執行程式
-
-		while (i <= 10);
-		// 條件
+		mySpan.innerHTML = result;
 
 
-		// while loop 1 + 2 .... + 10
-		// let j = 1;
-		// let sum = 0
-		// while (j <= 10) {
-		// 	console.log('j = ', j);
-		// 	sum += j;
-		// 	console.log('sum = ', sum);
-		// 	j++;
-		// }
+
+
 
 
 
