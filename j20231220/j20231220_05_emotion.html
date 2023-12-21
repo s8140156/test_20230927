@@ -24,19 +24,20 @@
 				<input class="form-control" type="text" name="" id="name" placeholder="name?">
 			</div>
 			<div class="col-12 col-sm-6 mt-3">
-				<label for="mood" class="label-form">心情</label>
 				<select name="" id="mood" class="form-control">
-					<option value="">請選擇</option>
+					<option value="">請選擇心情狀態</option>
 					<option value="happy">快樂</option>
 					<option value="sad">難過</option>
 					<option value="soso">普通</option>
-				<!-- 老師這邊使用把下拉選單的value 來做switchcase-->
+					<!-- 老師這邊使用把下拉選單的value 來做switchcase-->
 				</select>
 			</div>
 		</div>
 		<div class="row mt-3">
 			<div class="col">
-				<button class="btn btn-primary" type="button" id="myBtn">submit</button>
+				<div class="d-grid gap-2">
+					<button class="btn btn-primary" type="button" id="myBtn">submit</button>
+				</div>
 			</div>
 		</div>
 		<div class="row mt-3">
@@ -50,7 +51,7 @@
 	<script>
 		//init data
 
-		let moodObj = {
+		const moodObj = {
 			name: 'name',
 			//這邊是設定變數 請注意使用:
 			happyFun: function () {
@@ -90,10 +91,10 @@
 				text = "You canceled!";
 				console.log('text', text);
 				return false;
-				
+
 			}
 			let moodValue = mood.value;
-			let nameValue = name.vlaue;
+			let nameValue = name.value;
 
 			console.log('moodValue', moodValue);
 
@@ -112,6 +113,7 @@
 					getResult = moodObj.happyFun();
 					mySpan.setAttribute('class', 'text-success');
 					mySpan.innerText = getResult;
+					 // 將 getResult 的值設定為 mySpan 元素的內容
 					break;
 				case 'sad':
 					moodObj.sadFun();
