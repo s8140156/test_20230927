@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+	<script>
+		//薪水
+		let data = [3, 5, 5, 6, 3, 5, 10];
+		//new data=[6,10,10,...]
+		let newData = [];
+
+		//方法一 Array push()
+		let sum = 0;
+		data.forEach(function (value, index) {
+			let tmp = value * 2;
+			newData.push(tmp)
+			//使用push把資料丟進array
+		})
+
+		// console.log(newData);
+
+		//方法二 Array map()
+		// 將原本array的東西by計算方式取代(但看起來不會影響原array,記得宣告一個新的陣列變數)
+		newData=data.map(function(value,index){
+			//其實function內可以只要function(value){}即可
+			if(value >5){
+				return value*10;
+
+			}else{
+				return value*2;
+			}
+		})
+
+		console.log(newData);
+		// console.log(data);
+
+
+// 題目：
+// 給定一個陣列 data，請創建一個新陣列 newData，其中的元素是原陣列中每個元素的平方值。
+
+let data1 = [2, 4, 6, 8, 10];
+// newData 應該為 [4, 16, 36, 64, 100]
+
+let newData1 = [];
+
+// 你的程式碼應該在這裡
+newData1=data1.map(function(value){
+	// return value**2; //平方的寫法
+	// return value * value;
+	return Math.pow(value,2);
+	// Math要大寫
+	// 呼叫 Math.pow 函數，並傳入兩個參數，第一個是底數（即你想要平方的數值），第二個是指數（即平方的次數）
+})
+
+console.log(newData1);  // 預期輸出: [4, 16, 36, 64, 100]
+
+// 題目：
+// 給定一個陣列 data2，請創建一個新陣列 newData2，
+// 其中的元素是原陣列中每個奇數元素的立方值（即奇數元素的三次方）。
+
+let data2 = [1, 2, 3, 4, 5, 6, 7];
+// newData2 應該為 [1, 27, 125]
+
+let newData2 = [];
+
+// 你的程式碼應該在這裡
+newData2=data2.map(function(value){
+	if(value % 2==1){
+		// return value*value*value;
+		return value**3;
+	}
+	return value;
+	//這邊是偶數 返回原始值 不然在console會顯示undefined
+})
+
+console.log(newData2);  // 預期輸出: [1, 27, 125]
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+
+</html>
