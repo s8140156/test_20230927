@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+	<script>
+
+		let saleArr = [
+			{
+				'order': 's20231226001',
+				'price': 1000,
+			},
+			{
+				'order': 's20231226002',
+				'price': 5000,
+			},
+
+			{
+				'order': 's20231226003',
+				'price': 20000,
+			}
+		];
+		console.log('saleArr', saleArr);
+		console.log('saleArr typeof', typeof (saleArr));
+
+		
+		let sum=0; //這個很重要 看起來要計算前面要先宣告初始值
+		saleArr.forEach(function (value, key) {
+			console.log('key', key);
+			console.log('value', value);
+			// console.log('value["order"]', value['order']);
+			// console.log('value["price"]', value['price']);
+			console.log('value.price', value.price);
+			sum+=value.price;
+			// sum+=value['price'];
+			console.log('sum',sum);
+
+		})
+
+		//4號寫法
+		let shop = {
+			order:['s20231226001','s20231226002','s20231226003'] ,
+			price:[1000,5000,20000] 
+
+		}
+		let sum2=0;
+		for (const key in shop){
+			if(key == 'price'){
+				shop[key].forEach(function(val,idx){
+					sum2+=val;
+					console.log(val);
+					console.log(idx);
+					console.log(shop[key]);
+					
+					
+					
+					
+				})
+			}
+			
+		}
+		console.log(sum2)
+
+
+
+
+
+	</script>
+
+</body>
+
+</html>

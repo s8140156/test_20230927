@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+	<script>
+
+		let data = [1,2,3,4,5,6,7,8,9,10];
+		
+		let sum=0;
+		data.forEach(function(value,index){
+			// console.log('value',value);
+			// console.log('index',index);
+			// console.log('data typeof', typeof (data));
+			sum+=value;
+		})
+		console.log(sum);
+		//加總最後的結果 要拉到function外 不然會看到累加的過程
+
+		let sum2=0;
+		data.forEach(function(value,index){
+			if(value %2 ==1){
+				// 取數字/2餘1的就是奇數
+				// console.log('value % 2',value % 2);
+				console.log('value',value);
+				sum2+=value;
+			}
+		})
+		console.log(sum2);
+
+		
+		let sum3=0;
+		data.forEach(value=>{
+			// 使用箭頭函式
+			if(value %2 ==0){
+				// 取數字/2整除的就是偶數
+				// console.log('value % 2',value % 2);
+				console.log('value',value);
+				sum3+=value;
+			}
+		})
+		console.log(sum3);
+		
+		
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+
+</html>

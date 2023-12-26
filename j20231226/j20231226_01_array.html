@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+	<script>
+		// array使用isArray判斷是否為純陣列
+		// 如果是 才可以使用"array method"
+		let strArr = ['amy', 'bob', 'cat'];
+		console.log('strArr', strArr);
+		console.log('strArr typeof', typeof (strArr));
+		let result = Array.isArray(strArr);
+		console.log('result', result);
+		//  如果是純陣列 console回傳true
+
+		strArr.forEach(function (value, index, array) {
+			// 通常裡面的array可省略
+			console.log('index', index);
+			console.log('value', value);
+			console.log('array', array);
+			// console看到的array就是列出陣列裡所有東西;
+		})
+		// object
+		let myObj = {
+			's1': 'amy',
+			's2': 'bob',
+			's3': 'cat'
+		}
+		//請注意符號寫法; or ,
+
+		console.log('myObj', myObj);
+		console.log('myObj typeof', typeof (myObj));
+		let resultObj = Array.isArray(myObj);
+		console.log('resultObj', resultObj);
+		// myObj是object不是array 所以console顯示false
+
+		// object無法使用array method
+		// myObj.forEach(function (value, index, array) {
+		// 	console.log('index', index);
+		// 	console.log('value', value);
+		// 	console.log('array', array);
+		// 	//所以console會顯示myObj.forEach不是個function
+		// })
+
+		//查看object裡面的array資料
+		// for in
+		for (const key in myObj){
+			console.log('key',key);
+			console.log('${myObj[key]}',`${myObj[key]}`);
+			//注意看後面變數寫法 還有符號引用
+		}
+
+		// for of use array很少用
+
+		// object
+		// object轉成array
+		Object.keys(myObj).forEach(function (value,index,array){
+			console.log('index', index);
+			console.log('value', value);
+			console.log('array', array);
+			// 看起來是再轉成一個新陣列 有新index, 顯示的是value:s1 而不是後面的值amy
+		})
+		let storeArr = [
+      {
+        'name': '台北店',
+        'tel': '0911-111-111',
+      },
+      {
+        'name': '台中店',
+        'tel': '0922-222-222',
+      },
+      {
+        'name': '高雄店',
+        'tel': '0933-333-333'
+      }
+    ];
+	console.log('storeArr',storeArr);
+	// console顯示出來會有0:{name:台北店, tel:xxx}, 1:{name:台中店, tel:xxx}
+	storeArr.forEach(function (value,key){
+		console.log('key', key);
+		//顯示key:0
+      console.log('value', value);
+	  //顯示value:{name:台北店, tel:xxx}
+	  console.log('value["name"]', value['name']);
+	  //顯示 台北店
+      console.log('value["tel"]', value['tel']);
+	  //顯示 xxx-xxx
+	  if (value['name'] == '台北店') {
+        console.log('這是台北店');
+      }
+
+	})
+
+
+	</script>
+
+</body>
+
+</html>
