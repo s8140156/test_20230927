@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap template</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="container mt-3">
+
+
+		<table class="table table-striped align-middle text-center">
+			<thead>
+				<tr>
+					<th scope="col">商品</th>
+					<th scope="col">單價</th>
+					<th scope="col">數量</th>
+					<th scope="col">總價</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<h3>LV</h3>
+						<p>
+							<img src="https://picsum.photos/id/237/150/150" alt="">
+						</p>
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item1Price" value="10000" step="10000">
+						<!-- 學到 如果想要每改一格跳100 要用屬性step="" -->
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item1Num" value="1">
+					</td>
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item1Total" value="10000" readonly>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h3>BV</h3>
+						<p>
+							<img src="https://picsum.photos/id/170/150/150" alt="">
+						</p>
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item2Price" value="10000" step="15000">
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item2Num" value="1">
+					</td>
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item2Total" value="10000" readonly>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h3>CELINE</h3>
+						<p>
+							<img src="https://picsum.photos/id/100/150/150" alt="">
+						</p>
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item1Price" value="10000" step="5000">
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item1Num" value="1">
+					</td>
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item1Total" value="10000" readonly>
+					</td>
+				</tr>
+				<tr>
+					<td>Subtotal</td>
+					<td colspen="2"><span id="resultSpan"></span></td>
+					<td>
+						<div class="d-grid gap-2">
+							<button class="btn btn-warning" type="button" id="myBtn">VIP有折扣</button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+		integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+	<script>
+		// jq 起手式  $(function(){}) 看起來把所有東西都包起來
+
+
+		$(function () {
+			function item1Fun() {
+				let getItem1Price = Number(item1Price.val());
+				let getItem1Num = Number(item1Num.val());
+				let getResultItem1Total = getItem1Price * getItem1Num;
+				item1Total.val(getResultItem1Total);
+			}
+
+			function item2Fun() {
+				let getItem2Price = Number(item2Price.val());
+				let getItem2Num = Number(item2Num.val());
+				let getResultItem2Total = getItem2Price * getItem2Num;
+				item2Total.val(getResultItem2Total);
+				// 直接把做的結果放在()裡
+			}
+
+
+
+			const item1Price = $('#item1Price');
+			const item1Num = $('#item1Num');
+			const item1Total = $('#item1Total');
+			const item2Price = $('#item2Price');
+			const item2Num = $('#item2Num');
+			const item2Total = $('#item2Total');
+			const myBtn = $('#myBtn');
+			const resultSpan = $('#resultSpan');
+			//這邊要注意變數的宣告$('#')(如果是id)
+
+			item1Price.change(function () {
+				item1Fun();
+			})
+
+			item1Num.change(function () {
+				item1Fun();
+			})
+
+			item2Price.change(function () {
+				item2Fun();
+			})
+
+			item2Num.change(function () {
+				item2Fun();
+			})
+
+			myBtn.click(function () {
+				let getItem1Total = Number(item1Total.val());
+				//myBtn監聽事件取的是input上value id值 (所以不是想的取後面計算使用的變數)
+				let getItem2Total = Number(item2Total.val());
+				let sum = getItem1Total + getItem2Total;
+				if (sum > 20000) {
+					sum = sum * 0.95;
+					// 要記得做完的計算存回sum變數
+				}
+				console.log('sum', sum);
+				resultSpan.text(sum);
+				//jq 直接寫.text(sum)
+
+
+			})
+
+
+		});
+
+
+	</script>
+
+
+
+</body>
+
+</html>

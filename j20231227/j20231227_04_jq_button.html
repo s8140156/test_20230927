@@ -17,7 +17,8 @@
 
 <body>
 
-	<button type="button" id="myBtn">myBtn</button>
+	<button type="button" class="myBtn">myBtn1</button>
+	<button type="button" class="myBtn">myBtn2</button>
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -27,13 +28,38 @@
 <!-- jq必須要先載入↑上面的(放上面) 才能開始寫程式 而不是放在/body上方 -->
 
 		<script>
-			$(document).ready(function(){
-				//jquery object才可以使用jquery method
-				const myBtn=$('#myBtn');
-				const myBtnJs=document.getElementById('myBtn');
-				console.log('myBtn',myBtn);
-				console.log('myBtnJs',myBtnJs);
-			})
+			// $(function(){
+			// 	const myBtn=$('#myBtn');
+			// 	myBtn.click(function(){
+			// 		console.log('myBtn click ok')
+			// 	})
+			// });
+			const myBtn=$('.myBtn');
+			//要兩個button都被宣告 要改.myBtn(button要改成class=myBtn) 不是#(id)
+
+			$(function(){
+				myBtn.click(function(e){
+					console.log('this',this);
+					//在console是顯示js 原生
+					console.log('$(this)',$(this));
+					//在console是顯示jq object
+
+
+				})
+			});
+
+
+       //Basic syntax is: $(selector).action()
+	   //ex.$(selector)=myBtn
+	   //ex. .action()=.click()
+
+			// $(document).ready(function(){
+			// 	//jquery object才可以使用jquery method
+			// 	const myBtn=$('#myBtn');
+			// 	const myBtnJs=document.getElementById('myBtn');
+			// 	console.log('myBtn',myBtn);
+			// 	console.log('myBtnJs',myBtnJs);
+			// })
 			
 		</script>
 
