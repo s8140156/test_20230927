@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap template</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="container mt-3">
+
+
+		<table class="table table-striped align-middle text-center">
+			<thead>
+				<tr>
+					<th scope="col">商品</th>
+					<th scope="col">單價</th>
+					<th scope="col">數量</th>
+					<th scope="col">總價</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<h3>LV</h3>
+						<p>
+							<img src="https://picsum.photos/id/237/150/150" alt="">
+						</p>
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item1Price" value="10000" step="10000">
+						<!-- 學到 如果想要每改一格跳100 要用屬性step="" -->
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item1Num" value="1">
+					</td>
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item1Total" value="10000" readonly>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h3>BV</h3>
+						<p>
+							<img src="https://picsum.photos/id/170/150/150" alt="">
+						</p>
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item2Price" value="10000" step="15000">
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item2Num" value="1">
+					</td>
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item2Total" value="10000" readonly>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h3>CELINE</h3>
+						<p>
+							<img src="https://picsum.photos/id/100/150/150" alt="">
+						</p>
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item1Price" value="10000" step="5000">
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item1Num" value="1">
+					</td>
+					</td>
+					<td>
+						<input type="number" class="form-control" id="item1Total" value="10000" readonly>
+					</td>
+				</tr>
+				<tr>
+					<td>Subtotal</td>
+					<td colspen="2"><span id="resultSpan"></span></td>
+					<td>
+						<div class="d-grid gap-2">
+							<button class="btn btn-warning" type="button" id="myBtn">VIP有折扣</button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+
+
+
+
+	<script>
+		function item1Fun() {
+			let getItem1Price = Number(item1Price.value);
+			let getItem1Num = Number(item1Num.value);
+			let getResultItem1Total = getItem1Price * getItem1Num;
+			item1Total.value = getResultItem1Total;
+		}
+
+		function item2Fun() {
+			let getItem2Price = Number(item2Price.value);
+			let getItem2Num = Number(item2Num.value);
+			let getResultItem2Total = getItem2Price * getItem2Num;
+			item2Total.value = getResultItem2Total;
+		}
+
+		const item1Price = document.getElementById('item1Price');
+		const item1Num = document.getElementById('item1Num');
+		const item1Total = document.getElementById('item1Total');
+		const item2Price = document.getElementById('item2Price');
+		const item2Num = document.getElementById('item2Num');
+		const item2Total = document.getElementById('item2Total');
+		const myBtn = document.getElementById('myBtn');
+		const resultSpan = document.getElementById('resultSpan');
+
+
+		item1Price.addEventListener('change', function () {
+			item1Fun();
+		})
+
+		item1Num.addEventListener('change', function () {
+			item1Fun();
+		})
+
+		item2Price.addEventListener('change', function () {
+			item2Fun();
+		})
+
+		item2Num.addEventListener('change', function () {
+			item2Fun();
+		})
+
+		myBtn.addEventListener('click',function(){
+			let getItem1Total = Number(item1Total.value);
+			//myBtn監聽事件取的是input上value id值 (所以不是想的取後面計算使用的變數)
+			let getItem2Total = Number(item2Total.value);
+			let sum=getItem1Total+getItem2Total;
+			if(sum>20000){
+				sum=sum*0.95;
+				// 要記得做完的計算存回sum變數
+			}
+			console.log('sum',sum);
+			resultSpan.innerText=sum;
+
+
+		})
+
+		// item1Total.addEventListener('click', function () {
+		// 	let item1PriceValue = Number(item1Price.value);
+		// 	let item1NumValue = Number(item1Num.value);
+		// 	console.log('item1PriceValue', item1PriceValue)
+
+		// 	let sum = item1PriceValue * item1NumValue;
+		// 	console.log('sum', sum);
+
+		// 	item1Total.value = sum
+		// 	// 要有這個如何在畫面上顯示值item1Total".value"
+		// })
+		//看起來不需特別寫total的監聽事件, 宣告是拿來做計算使用(??)
+
+	</script>
+
+
+
+</body>
+
+</html>
