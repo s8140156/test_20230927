@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>廣告文案</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .box{
+      width: 300px;
+      height: 300px;
+      background-color: aqua;
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <div class="d-grid gap-2 mt-5">
+        <button data-page="#page1" data-ani="toggle" type="button" class="myBtn btn btn-primary" id="page1Btn">toggle Button</button>
+        <!-- 使用dat-* 綁定下面文章的id與要使用的動畫動作 -->
+        <!-- 並還要增加class="myBtn" -->
+      </div>
+      <div id="page1">
+        Page1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et vero autem illo quod distinctio assumenda cumque neque impedit similique voluptatem, incidunt corrupti dicta iste, enim, iure eveniet officiis vel reprehenderit sequi! Odit ut minus culpa, quia id rem ullam maiores quaerat illum dolorem qui explicabo quidem ea quae blanditiis eaque?
+      </div>
+    </div>
+    <div class="col col-md-4">
+      <div class="d-grid gap-2 mt-5">
+        <button data-page="#page2" data-ani="fadeToggle" type="button" class="myBtn btn btn-primary" id="page2Btn">fadetoggle Button</button>
+      </div>
+      <div id="page2">
+        Page2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam debitis laborum vero alias, esse, a ullam neque unde eligendi repellat architecto nihil quos, in officia dignissimos! Delectus id nisi, magnam deserunt perferendis, nam est doloribus possimus aliquid, maiores minus incidunt illum quibusdam assumenda recusandae quod quidem! Accusamus tenetur corrupti ratione.
+      </div>
+    </div>
+    <div class="col col-md-4">
+      <div class="d-grid gap-2 mt-5">
+        <button data-page="#page3" data-ani="slideToggle" type="button" class="myBtn btn btn-primary" id="page3Btn">slidetoggle Button</button>
+      </div>
+      <div id="page3">
+        Page3 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, quod. Iure architecto, dolor autem, impedit facere quisquam sint laudantium placeat expedita rerum adipisci modi dolorem aliquam. Cupiditate, atque? Numquam eum, doloribus accusamus cupiditate asperiores, esse voluptate ipsum fuga exercitationem sapiente illum minus quos a ratione officia ducimus amet unde qui.
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 請注意版面寫法 這邊是button直接對應文章在同一組col下 -->
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () { //jq起首式?
+      const myBtn=$('.myBtn'); //宣告class
+  
+      console.log('myBtn', myBtn); 
+
+      //這邊看起來畫面顯示要打開另一個page時 前一個page被替換掉的感覺
+      myBtn.click(function () {
+        console.log('this',this); //這個是原生的element
+        let getDataPage=$(this).attr('data-page'); // 把this改成jq物件 老師使用.attr()取data-*的資料
+        let getDataAni=$(this).attr('data-ani'); 
+
+        console.log('getDataPage',getDataPage); //會取到data-page裡面的值:#pageX
+        console.log('getDataAni',getDataAni); //會取到data-page裡面的值:#pageX
+        switch (getDataAni){
+          case 'toggle':
+            $(getDataPage).toggle(3000);
+            break;
+            case 'fadeToggle':
+            $(getDataPage).fadeToggle(3000);
+            break;
+            case 'slideToggle':
+            $(getDataPage).slideToggle(3000);
+            break;
+
+            default:
+              break;
+        }
+
+        
+      });
+
+
+
+
+    });
+
+  </script>
+</body>
+
+</html>

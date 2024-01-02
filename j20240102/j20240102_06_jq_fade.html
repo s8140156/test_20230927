@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .box{
+      width: 300px;
+      height: 300px;
+      background-color: aqua;
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="d-grid gap-2 mt-5">
+        <button data-page="#page1" type="button" class="myBtn btn btn-primary" id="page1Btn">page1</button>
+        <!-- 使用data-*包資料 這裡看起來包文章的id? -->
+        <!-- 並還要增加class="myBtn" -->
+      </div>
+    </div>
+    <div class="col">
+      <div class="d-grid gap-2 mt-5">
+        <button data-page="#page2" type="button" class="myBtn btn btn-primary" id="page2Btn">page2</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="d-grid gap-2 mt-5">
+        <button data-page="#page3" type="button" class="myBtn btn btn-primary" id="page3Btn">page3</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="d-grid gap-2 mt-5">
+        <button data-page="#page4" type="button" class="myBtn btn btn-primary" id="page4Btn">page4</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-3 page-container" id="page1">
+  <div class="row">
+    <div class="col">
+     Page1 Lorem, ipsum dolor.
+    </div>
+  </div>
+</div>
+<div class="container mt-3 page-container" id="page2">
+  <div class="row">
+    <div class="col">
+     Page2 Lorem ipsum dolor sit amet.
+    </div>
+  </div>
+</div>
+<div class="container mt-3 page-container" id="page3">
+  <div class="row">
+    <div class="col">
+     Page3 Lorem ipsum dolor sit amet consectetur adipisicing.
+    </div>
+  </div>
+</div>
+<div class="container mt-3 page-container" id="page4">
+  <div class="row">
+    <div class="col">
+     Page4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta!
+    </div>
+  </div>
+</div>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () { //jq起首式?
+      const myBtn=$('.myBtn'); 
+      const pageContainer=$('.page-container');
+  
+      //改綁定button class
+
+
+      console.log('myBtn', myBtn); 
+
+
+      //在一開始先將文章隱藏
+      pageContainer.hide();
+      
+
+      //這邊看起來畫面顯示要打開另一個page時 前一個page被替換掉的感覺
+      myBtn.click(function () {
+        console.log('this',this); //這個是原生的element
+        let getDataPage=$(this).attr('data-page'); // 把this改成jq物件 老師使用.attr()取data-*的資料
+        console.log('getDataPage',getDataPage); //會取到data-page裡面的值:#pageX
+
+        pageContainer.fadeOut(2000);
+        // $(getDataPage).fadeIn(3000);
+
+        setTimeout(function(){
+        $(getDataPage).fadeIn(3000);
+
+        },3000)
+        
+      });
+
+
+
+
+    });
+
+  </script>
+</body>
+
+</html>
