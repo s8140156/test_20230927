@@ -90,7 +90,7 @@
 
 
 				// string method length
-				if(num1.val().length <=0 || num2.val().length <=0){
+				if (num1.val().length <= 0 || num2.val().length <= 0) {
 					alert('請輸入數值');
 					return false;
 				}
@@ -104,24 +104,27 @@
 				switch (calValue) {
 					case 'sum':
 						spanResult.text(resultSum);
-				console.log('resultSum', resultSum);
+						console.log('resultSum', resultSum);
 
 						break;
 					case 'sub':
 						spanResult.text(resultSub);
+						console.log('resultSub', resultSub);
 						break;
 					case 'mul':
 						spanResult.text(resultMul);
+						console.log('resultMul', resultMul);
 						break;
 					case 'div':
 						spanResult.text(resultDiv);
+						console.log('resultDiv', resultDiv);
 						break;
 					default:
 						break;
 				}
 
 				// 因為不是使用input 是使用SPAN!! 所以是使用text()來顯示 而不是val()(輸入值)
-				
+
 				// console.log('calValue', calValue);
 				// console.log('spanResult', spanResult);
 				//因為是拆成四個式子 所以可以直接在switchcase下console看一下
