@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap template</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="container mt-3">
+		<h2>加減乘除練習</h2>
+		<table class="table table-hover align-middle text-center">
+			<thead>
+				<tr>
+					<th>num1</th>
+					<th>num2</th>
+					<th>option</th>
+					<th>button</th>
+					<th>result</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<input type="text" class="form-control myNum1" name="" id="num1">
+					</td>
+					<td>
+						<input type="text" class="form-control myNum2" name="" id="num2">
+					</td>
+					<td>
+						<select name="" id="cal" class="form-control myCal">
+							<option value="">select symbol</option>
+							<option value="sum"> + </option>
+							<option value="sub"> - </option>
+							<option value="mul"> * </option>
+							<option value="div"> / </option>
+						</select>
+					</td>
+					<td>
+						<button type="button" class="btn btn-primary myBtn" id="myBtn">submit</button>
+					</td>
+					<td>
+						<span class="mySpan" id="spanResult"></span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+		integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- jq必須要先載入↑上面的(放上面) 才能開始寫程式 而不是放在/body上方 -->
+	<script>
+
+		$(document).ready(function () {
+			const myNum1 = $('.myNum1');
+			const myNum2 = $('.myNum2');
+			const mySpan = $('.mySpan');
+			const myBtn = $('.myBtn');
+			const myCal = $('.myCal');
+
+			// console.log('num1', num1);
+			// console.log('num2', num2);
+			// console.log('spanResult', spanResult);
+			// console.log('myBtn', myBtn);
+			// 這邊看console應該只是確認id(element)是否轉成jq物件 成功是顯示ex.num1 ce.fn.init
+
+			myBtn.click(function () {
+				let getNum1 = Number(myNum1.val());
+				let getNum2 = Number(myNum2.val());
+				let resultSum = getNum1 + getNum2;
+				let resultSub = getNum1 - getNum2;
+				let resultMul = getNum1 * getNum2;
+				let resultDiv = getNum1 / getNum2;
+
+
+				// string method length
+				if (myNum1.val().length <= 0 || myNum2.val().length <= 0) {
+					alert('請輸入數值');
+					return false;
+				}
+				// 這邊使用num1來判斷(instead of getNum1)因為length()只能判斷字串而不是數值
+				// 這邊在判斷輸入欄位是否空值 有其一就顯示alert		
+				//如果沒有 return false，表單會繼續提交，導致頁面重新載入或執行預設的提交行為。
+				//當條件成立（num1 或 num2 為空）時，return false 阻止了表單的進一步處理，並顯示了一個警告訊息，使使用者有機會填寫必要的資訊，而不會提交空的資料。
+
+				let calValue = myCal.val();
+				// let calValue = Number(cal.val());
+				switch (calValue) {
+					case 'sum':
+						mySpan.text(resultSum);
+						console.log('resultSum', resultSum);
+
+						break;
+					case 'sub':
+						mySpan.text(resultSub);
+						console.log('resultSub', resultSub);
+						break;
+					case 'mul':
+						mySpan.text(resultMul);
+						console.log('resultMul', resultMul);
+						break;
+					case 'div':
+						mySpan.text(resultDiv);
+						console.log('resultDiv', resultDiv);
+						break;
+					default:
+						break;
+				}
+
+				// 因為不是使用input 是使用SPAN!! 所以是使用text()來顯示 而不是val()(輸入值)
+
+				// console.log('calValue', calValue);
+				// console.log('spanResult', spanResult);
+				//因為是拆成四個式子 所以可以直接在switchcase下console看一下
+				//老師的寫法是將
+
+
+			})
+
+
+		})
+
+
+
+
+	</script>
+
+</body>
+
+</html>
