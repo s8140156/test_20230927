@@ -14,7 +14,9 @@
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 		crossorigin="anonymous"></script>
 	<style>
-
+		body{
+			background-color: #282C35!important;
+		}
 	</style>
 </head>
 
@@ -31,15 +33,52 @@
 		<div class="container mt-3">
 			<div class="row">
 				<div class="col">
-					<h2>Discount</h2>
+					<h2 style="color:azure;">Get the new product now!</h2>
 					<p>Image at the top (card-img-top):</p>
 					<div class="card" style="width:400px">
 						<img class="card-img-top" src="https://picsum.photos/id/26/400/300" alt="Card image"
 							style="width:100%">
 						<div class="card-body">
 							<h4 class="card-title">bottega veneta</h4>
-							<p class="card-text">Luxury is you.</p>
+							<p class="card-text">
+								Italy. A culture rooted in its bottegas.
+								
+								‘Bottega’ translates in essence to ‘workshop’ – they are producers of small runs of handmade items realised with outstanding craftsmanship and creativity.</p>
+							<button id="myBtn" data-price="80000" data-level="B" class="my-btn btn btn-primary"
+								type="button">Get Price</button>
+							<div id="myBox" class="my-box box text-primary mt-2">
+								<span class="my-span" id="mySpan">Lorem ipsum dolor sit amet.</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<h2>Discount</h2>
+					<p>Image at the top (card-img-top):</p>
+					<div class="card" style="width:400px">
+						<img class="card-img-top" src="https://picsum.photos/id/103/400/300" alt="Card image"
+							style="width:100%">
+						<div class="card-body">
+							<h4 class="card-title">CELINE</h4>
+							<p class="card-text">DELUSIONAL DAYDREAM</p>
 							<button id="myBtn" data-price="50000" data-level="A" class="my-btn btn btn-primary"
+								type="button">Get Price</button>
+							<div id="myBox" class="my-box box text-primary mt-2">
+								<span class="my-span" id="mySpan">Lorem ipsum dolor sit amet.</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<h2>Discount</h2>
+					<p>Image at the top (card-img-top):</p>
+					<div class="card" style="width:400px">
+						<img class="card-img-top" src="https://picsum.photos/id/91/400/300" alt="Card image"
+							style="width:100%">
+						<div class="card-body">
+							<h4 class="card-title">LOEWE</h4>
+							<p class="card-text">Given our Spanish heritage you’d be forgiven for assuming that our name, and the way it’s pronounced, derives from Castilian.</p>
+							<button id="myBtn" data-price="130000" data-level="C" class="my-btn btn btn-primary"
 								type="button">Get Price</button>
 							<div id="myBox" class="my-box box text-primary mt-2">
 								<span class="my-span" id="mySpan">Lorem ipsum dolor sit amet.</span>
@@ -72,7 +111,7 @@
 					const levelObj = {
 						'A': 0.95,
 						'B': 0.9,
-						'c': 0.85,
+						'C': 0.85,
 					};
 					console.log('levelObj', levelObj);
 
@@ -89,12 +128,14 @@
 						console.log('result', result);
 
 						const nowCardBody=$(this).parent();  //只要找到最近的上層(可一併控制底下的即可)
-						const nowMyBox=nowCardBody.parent();  //只要找到最近的上層(可一併控制底下的即可)
+						const nowMyBox=nowCardBody.find('.my-box');
+						const nowMySpan=nowCardBody.find('.my-span');
 
 
 
-						myBox.toggle(); //我覺得使用toggle可以開關比較方便
-						mySpan.text(`Original Price:${getDataPrice} , New Price ${result}`)
+
+						nowMyBox.toggle(); //我覺得使用toggle可以開關比較方便
+						nowMySpan.text(`Original Price:${getDataPrice} , New Price ${result}`)
 
 
 
