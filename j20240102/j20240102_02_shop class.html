@@ -44,7 +44,21 @@
           </td>
         </tr>
         <tr>
-          <td colspen="2"><span id="resultSpan" class="my-discount"></span></td>
+          <td>
+            <img src="https://picsum.photos/id/26/160/120" alt="" srcset="">
+          </td>
+          <td>
+            <input type="number" class="form-control my-price" name="" id="item1Price" value="100" step="100">
+          </td>
+          <td>
+            <input type="number" class="form-control my-num" name="" id="item1Num" value="1">
+          </td>
+          <td>
+            <input type="number" class="form-control my-total" name="" id="item1Total" value="100" readonly>
+          </td>
+        </tr>
+        <tr>
+          <td colspen="4"><span id="resultSpan" class="my-discount"></span></td>
         </tr>
       </tbody>
     </table>
@@ -61,11 +75,11 @@
 
       function sumFun() {
         let sum = 0; //拜託請記得要宣告初始值
-        myTotal.each(function (index, element) {
+        myTotal.each(function (index, element) { // .each(function(key,value))
           console.log('index', index);
           console.log('element', element);
-          console.log('this', this);
-          let getValue = Number($(this).val());
+          console.log('this', this); //這邊this是原生element
+          let getValue = Number($(this).val()); //變身jq $(this)
           console.log('getValue', getValue);
           sum += getValue;
         });

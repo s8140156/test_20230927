@@ -28,6 +28,7 @@
         <button data-page="#page1" type="button" class="myBtn btn btn-primary" id="page1Btn">page1</button>
         <!-- 使用data-*包資料 這裡看起來包文章的id? -->
         <!-- 並還要增加class="myBtn" -->
+        <!-- 當我按下button時, 請幫我把class裡放的data-page裡的 id#page1 顯示或隱藏 -->
       </div>
     </div>
     <div class="col">
@@ -101,7 +102,7 @@
       //這邊看起來畫面顯示要打開另一個page時 前一個page被替換掉的感覺
       myBtn.click(function () {
         console.log('this',this); //這個是原生的element
-        let getDataPage=$(this).attr('data-page'); // 把this改成jq物件 老師使用.attr()取data-*的資料
+        let getDataPage=$(this).attr('data-page'); // 把this(button)改成jq物件 老師使用.attr()取data-*的資料; 
         console.log('getDataPage',getDataPage); //會取到data-page裡面的值:#pageX
 
         pageContainer.hide();

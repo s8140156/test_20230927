@@ -64,11 +64,11 @@
       console.log('item1Total', item1Total);
 
       item1Num.change(function () {
-        let getItem1Price = Number(item1Price.val());
-        let getItem1Num = Number(item1Num.val());
+        let getItem1Price = Number(item1Price.val()); //以防不同系統造成讀取資料型態有誤, 接收的值 在這裡最好轉類型
+        let getItem1Num = Number(item1Num.val()); // val()=>get
         // let getItem1Total = Number(item1Total.val());
 		resultTotal=getItem1Price*getItem1Num;
-		item1Total.val(resultTotal)
+		item1Total.val(resultTotal) // val(resultTotal)=>set (括號裡面有值)
         console.log('getItem1Price', getItem1Price);
         console.log('typeof', typeof (getItem1Price));
       });
