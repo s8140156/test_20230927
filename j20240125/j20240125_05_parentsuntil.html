@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap template</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<style>
+		.box {
+			width: 100%;
+			height: 70vh;
+		}
+		.container * {
+      color: #ccc;
+    }
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col mt-3">
+				<div class="box border border-primary p-3">
+					div
+					<ul class="border border-success p-3">
+						ul
+						<li class="border border-warning p-3" data-name="li1">
+							li
+							<span id="" class="mySpan border border-danger p-3">
+								hello span1 class
+							</span>
+						</li>
+						<li class="border border-warning p-3" data-name="li1">
+							li
+							<span id="" class="mySpan border border-danger p-3">
+								hello span2 class
+							</span>
+						</li>
+						<li class="border border-warning p-3" data-name="li2">
+							li
+							<b id="myB" class="border border-danger p-3">
+								hello b
+							</b>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+		integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- jq必須要先載入↑上面的(放上面) 才能開始寫程式 而不是放在/body上方 -->
+	<script>
+		$(document).ready(function () {
+			const mySpan = $('.mySpan');
+			const myB = $('#myB');
+			mySpan.click(function (e) {
+				console.log('mySpan ok');
+				// console.log(this, 'this'); //原生
+				// console.log($(this), '$(this)'); //變身jq物件
+				let thisParentsUntil = $(this).parentsUntil('.box'); // 碰到class=box前的每一層parent
+				console.log('thisParentsUntil',thisParentsUntil);
+				console.log('thisParentsUntil[0]',thisParentsUntil[0]); //加[]可以看原生狀況
+				console.log('thisParentsUntil[1]',thisParentsUntil[1]);
+
+				thisParentsUntil.attr('class','border border-primary p-3 text-primary');
+
+		
+
+			});
+		});
+	</script>
+
+</body>
+
+</html>
