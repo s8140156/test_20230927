@@ -35,7 +35,7 @@
 		<div class="text-end">
 			<button class="addBtn btn btn-success">Add</button>
 		</div>
-		<div class="row">
+		<div class="myRow row">
 			<div class="col-6 mt-3">
 				<input class="myName form-control" type="text" name="" id="" value="amy">
 			</div>
@@ -44,7 +44,7 @@
 				<button class="cloneBtn btn btn-primary me-2"><i class="fa-solid fa-copy"></i></button>
 			</div>
 		</div>
-		<div class="row">
+		<div class="myRow row">
 			<div class="col-6 mt-3">
 				<input class="myName form-control" type="text" name="" id="" value="bob">
 			</div>
@@ -53,7 +53,7 @@
 				<button class="cloneBtn btn btn-primary me-2"><i class="fa-solid fa-copy"></i></button>
 			</div>
 		</div>
-		<div class="row">
+		<div class="myRow row">
 			<div class="col-6 mt-3">
 				<input class="myName form-control" type="text" name="" id="" value="cat">
 			</div>
@@ -78,6 +78,7 @@
 			const delBtn = $('.delBtn');
 			const addBtn = $('.addBtn');
 			const cloneBtn = $('.cloneBtn');
+			const myRow=$('.myRow');
 	
 
 
@@ -90,8 +91,13 @@
 
 			addBtn.click(function(e){
 				console.log('this',this);
-				let row=row.find('row').last();
-				row.clone().appendTo("col-6");
+				let myRowLast=myRow.last(); //程式碼使用了 myRow.last() 來找到 .myRow 中的最後一個元素。(因為要在最後一行插入)
+				myRowLast.clone(true).appendTo(".container"); //這邊要拉高到container沒辦法使用col-6
+			});
+
+			cloneBtn.click(function(e){
+				let closestRow=$(this).closest('.myRow');
+				closestRow.clone(true).appendTo('.container');
 
 
 			});
