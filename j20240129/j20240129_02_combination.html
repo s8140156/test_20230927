@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap template</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<style>
+		body {
+			background-color: #a6c0fe;
+		}
+
+		img {
+			width: 200px;
+			height: 150px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				合計: <span id="mySum">0</span>
+			</div>
+		</div>
+	</div>
+	<div class="container ">
+		<div class="row">
+			<div class="col ">
+				<div class="box d-flex mt-3">
+					<div class="me-3"><button class="myBtn btn btn-warning" data-img="01" data-name="蚵仔煎"
+							data-price="80">蚵仔煎</button></div>
+					<div class="me-3"><button class="myBtn btn btn-warning" data-img="02" data-name="滷肉飯"
+							data-price="35">滷肉飯</button></div>
+					<div class="me-3"><button class="myBtn btn btn-warning" data-img="03" data-name="餛飩湯"
+							data-price="85">餛飩湯</button></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col ">
+				<div class="box d-flex mt-3">
+					<div class="me-3"><button class="myBtn btn btn-primary" data-img="04" data-name="珍波椰"
+							data-price="45">珍波椰</button></div>
+					<div class="me-3"><button class="myBtn btn btn-primary" data-img="05" data-name="珍珠奶茶"
+							data-price="50">珍珠奶茶</button></div>
+					<div class="me-3"><button class="myBtn btn btn-primary" data-img="06" data-name="楊枝甘露"
+							data-price="90">楊枝甘露</button></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="container mt-3">
+		<table class="table table-striped align-middle text-center border-radius">
+			<thead>
+				<tr>
+					<th width="7%">編號</th>
+					<th width="12%">商品</th>
+					<th width="12%">單價</th>
+					<th width="7%">數量</th>
+					<th scope="col">總價</th>
+					<th scope="col">備註</th>
+					<th scope="col">operate</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- <tr>
+					<td></td>
+					<td>
+							<img class="rounded-circle" src="./img/01.jpg" alt="">
+							<br>
+					</td>
+					<td>
+						<span></span>
+					</td>
+					<td>
+						<input type="number" class="form-control" id="" value="1" max="10" min="1">
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						<input type="text" class="form-control" id="" value="1" max="10" min="1">
+					</td>
+					<td>
+						<button type="button" class="cloneBtn btn btn-primary">copy</button>
+						<button type="button" class="delBtn btn btn-primary">X</button>
+					</td>
+				</tr> -->
+			</tbody>
+			<!-- <tr>
+					<td>Subtotal</td>
+					<td colspen="2"><span id="resultSpan"></span></td>
+					<td></td>
+					<td>
+						<div class="d-grid gap-2">
+							<button class="btn btn-warning" type="button" id="">小計</button>
+						</div>
+					</td>
+				</tr> -->
+		</table>
+	</div>
+
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+		integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- jq必須要先載入↑上面的(放上面) 才能開始寫程式 而不是放在/body上方 -->
+	<script>
+		$(document).ready(function () {
+			function sumFun() {
+				console.log('sumBtn ok');
+				let myTotal = $('.myTotal');
+				let getMyTotalCount = myTotal.length; //計算有幾個
+				console.log('myTotal', myTotal);
+					let sum = 0;
+					myTotal.each(function (index, value) {
+						console.log('index', index);
+						console.log('value', value);
+						sum = sum + Number($(value).text());
+
+					});
+					console.log('final sum', sum);
+					mySum.text(sum);
+			}
+			function delFun(nowThis) {
+				console.log('del ok');
+				let nowTr = $(nowThis).parent().parent();
+				nowTr.remove();
+				sumFun();
+
+				// 抓tr數量
+				// 如果tr <=2 不能刪除
+
+				// 抓tr數量
+				// let getTrCount = $('tr').length;
+				// console.log('getTrCount', getTrCount);
+				// // 如果tr <= 2 不能刪除
+				// if (getTrCount > 2) {
+				//   let nowTr = $(nowThis).parent().parent();
+				//   nowTr.remove();
+				// }
+			}
+			function cloneFun(nowThis) {
+				console.log('clone ok');
+				let nowTr = $(nowThis).parent().parent();
+				// nowTr.clone(true).appendTo('tbody'); //這個會是複製在整個行最後一行後
+				nowTr.clone(true).insertAfter(nowTr); //這個會是直接複製在你選的下一行
+				sumFun();
+
+			}
+
+			const myBtn = $('.myBtn');
+			const mySum = $('#mySum');
+			const sumBtn = $('#sumBtn');
+			let delBtn = $('.delBtn');
+			let cloneBtn = $('.cloneBtn');
+
+
+			//init cloneBtn
+			cloneBtn.click(function () {
+				cloneFun(this);
+			});
+
+			//init delBtn
+			delBtn.click(function () {
+				delFun(this);
+			});
+
+			myBtn.click(function () {
+				let name = $(this).attr('data-name');
+				let price = $(this).attr('data-price');
+				let imgUrl = $(this).attr('data-img');
+				let content = `
+				<tr>
+					<td>${imgUrl}</td>
+					<td>
+							<img class="rounded-circle" src="./img/${imgUrl}.jpg">
+							<br>
+							<span style="text-decoration:underline;color:#30cfd0;font-weight:bold">${name}</span>
+					</td>
+					<td>
+						<span class="text-primary">單價: $ ${price}</span>
+					</td>
+					<td>
+						<input type="number" class="quantity form-control" id="" value="1" max="10" min="1">
+					</td>
+					<td>
+						總計: <span class="myTotal">${price}</span>
+					</td>
+					<td>
+						<input type="text" class="form-control" id="" value="1" max="10" min="1">
+					</td>
+					<td>
+						<button type="button" class="cloneBtn btn btn-primary"><i class="fa-solid fa-copy"></i></button>
+						<button type="button" class="delBtn btn btn-success"><i class="fa-solid fa-trash-can"></i></button>
+					</td>
+				</tr>
+				`;
+				$('tbody').append(content);
+
+				addDelBtn = $('.delBtn').last();
+				addCloneBtn = $('.cloneBtn').last();
+				addQuantity = $('.quantity').last();
+
+				sumFun();
+
+				// addDelBtn
+				addDelBtn.click(function () {
+					delFun(this);
+
+				});
+				// addDelBtn
+				addCloneBtn.click(function () {
+					cloneFun(this);
+
+				});
+				// addQuantity
+				addQuantity.change(function () {
+					let getQuantity = Number($(this).val());
+					let closestQuantityTr = $(this).parent().parent().parent();
+					let findTotal = closestQuantityTr.find('.myTotal');
+					console.log('closestQuantityTr', closestQuantityTr);
+					console.log('getQuantity', getQuantity);
+					let total = getQuantity * price;
+					console.log('total', total);
+					findTotal.text(total);
+
+					// sumFun();
+
+				});
+
+			});
+
+		});
+	</script>
+
+</body>
+
+</html>
