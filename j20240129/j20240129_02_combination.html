@@ -231,7 +231,7 @@
 				// addQuantity
 				addQuantity.change(function () {
 					let getQuantity = Number($(this).val());
-					let closestQuantityTr = $(this).parent().parent().parent();
+					let closestQuantityTr = $(this).parent().parent();
 					let findTotal = closestQuantityTr.find('.myTotal');
 					console.log('closestQuantityTr', closestQuantityTr);
 					console.log('getQuantity', getQuantity);
@@ -239,7 +239,7 @@
 					console.log('total', total);
 					findTotal.text(total);
 
-					// sumFun();
+					sumFun();
 
 				});
 
