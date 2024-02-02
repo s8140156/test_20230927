@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap template</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+		integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- jq必須要先載入↑上面的(放上面) 才能開始寫程式 而不是放在/body上方 -->
+	<script>
+		$(document).ready(function () {
+			const testBtn = $('.testBtn');
+			console.log('testBtn', testBtn);
+			testBtn.each(function (index, element) {
+				// element == this
+				console.log('index', index);
+				console.log('element', element);
+				console.log('this', this); //這邊是沒點選從console.log看到this是甚麼(就是element)
+				$(this).click(function (e) {
+					e.preventDefault();
+
+				});
+
+			});
+			testBtn.click(function (e) { //這邊是點選之後 才會看到console.log狀況
+				e.preventDefault();
+				console.log('this', this);
+
+			});
+
+			const obg = {
+				's1': 'amy',
+				's2': 'bob',
+				's3': 'cat',
+			}
+			console.log('obj', obg);
+			const storeArr = [ //使用時 最好是陣列[]包多個物件{}, 不建議物件{}包物件{}
+				{
+					'name': '台北店',
+					'mobile': '0911-111-111',
+				},
+				{
+					'name': '台中店',
+					'mobile': '0922-222-222',
+				},
+				{
+					'name': '高雄店',
+					'mobile': '0933-333-333',
+				},
+			];
+			console.log('storeArr', storeArr);
+
+			storeArr.forEach(element => {
+				console.log('element', element);
+			});
+
+		})
+
+		// array.forEach(element => {
+
+		// });
+		//這是js原生foreach
+
+
+
+
+
+	</script>
+
+</body>
+
+</html>
