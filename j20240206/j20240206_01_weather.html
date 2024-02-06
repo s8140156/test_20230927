@@ -17,6 +17,24 @@
 
 <body>
 
+	<ol id="myOl">
+		<!-- <li>111</li> -->
+	</ol>
+	<table class="table table-hover" id="myTable">
+		<thead>
+			<tr>
+				<th width="30%" class="text-center">id</th>
+				<th class="text-start">name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- <tr>
+				<td>123</td>
+				<td>456</td>
+			</tr> -->
+		</tbody>
+	</table>
+
 
 	
 
@@ -30,16 +48,39 @@
 	<script>
 		$(document).ready(function(){
 			let url=weatherUrl
+			const myOl=$('#myOl')
+			const myTable=$('#myTable')
+
 			$.ajax({
 				type: "get",
                 url: url,
-                data: "data",
-                dataType: "json",
+                // data: "data",
+                // dataType: "json",
                 success: function (res) {
-					console.log('res',res)
+					// console.log('res',res)
+					// console.log('res.records',res.records)
+					// console.log('res.["records"]',res['records'])
+					// console.log('res.records.datasetDescription',res.records.datasetDescription)
+					let nowLocation=res.records.location //要從console去看別人的api裡面陣列放甚麼 有甚麼欄位 所以找到location{}裡面有縣市資訊
+					// console.log('nowLocation',nowLocation)
+					$.each(nowLocation,function(key,value){ //在使用$.each()去取陣列裡面的key value 縣市名稱是在locationName
+						let nowID=key+1;
+						let stringID=nowID.toString().padStart(2,"0"); //先把index轉成字串後 padStart(共兩位,"補0")將id補0
+						let nowLocationName=value.locationName;
+						// let content=`
+						// <li>${nowLocationName}</li>
+						// `;
+						let content=`
+						<tr>
+							<td class="text-center">${stringID}</td>
+							<td class="text-start">${nowLocationName}</td>
+						</tr>
+						`;
+						console.log('nowLocationName',nowLocationName)
+						$('tbody').append(content)
+					})
 
 
-					
 					
 				}
 			})
