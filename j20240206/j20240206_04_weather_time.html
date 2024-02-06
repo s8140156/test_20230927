@@ -14,11 +14,17 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 		crossorigin="anonymous"></script>
+		<style>
+			body{
+				background-color: lightslategray;
+				color:white;
+			}
+		</style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="container mt-5">
 	<div class="col">
 		<div class="row">
 			<table class="display" id="myTable">
@@ -29,7 +35,6 @@
 						<th id="title12">desc12</th>
 						<th id="title24">desc24</th>
 						<th id="title36">desc36</th>
-
 					</tr>
 				</thead>
 				<tbody>
@@ -43,20 +48,21 @@
 	</div>
 </div>
 
-<img src="./weatherimg/day/" alt="">
+<!-- <img src="./weatherimg/day/" alt=""> -->
 	
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
 	integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
 	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
-	<script src="../ignore/js/pw.js"></script> <!--如果有ignore檔要記得link-->>
+	<!-- <script src="../ignore/js/pw.js"></script>  -->
+	<!--如果有ignore檔要記得link-->
 
 	<!-- jq必須要先載入↑上面的(放上面) 才能開始寫程式 而不是放在/body上方 -->
 
 	<script>
 		$(document).ready(function(){
-			let url=weatherUrl
+			let url='https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWA-0C282312-1CB1-45A2-8830-E166C47E23D8'
 			const myOl=$('#myOl')
 			const myTable=$('#myTable')
 			const title12=$('#title12')
@@ -75,7 +81,62 @@
 					// console.log('res.["records"]',res['records'])
 					// console.log('res.records.datasetDescription',res.records.datasetDescription)
 					let nowLocation=res.records.location //要從console去看別人的api裡面陣列放甚麼 有甚麼欄位 所以找到location{}裡面有縣市資訊
-					let nowLocationMaxT = res.records.location[1].weatherElement[4]['time'][0]['parameter']['parameterName'];
+					// let nowLocationMaxT = res.records.location[1].weatherElement[4]['time'][0]['parameter']['parameterName'];
+
+					let title12Text=res.records.location[1].weatherElement[2].time[0].startTime
+					let title24Text=res.records.location[1].weatherElement[2].time[1].startTime
+					let title36Text=res.records.location[1].weatherElement[2].time[2].startTime
+					title12.text(title12Text)
+					title24.text(title24Text)
+					title36.text(title36Text)
+
+					let time12=new Date(title12Text)
+					let time24=new Date(title24Text)
+					let time36=new Date(title36Text)
+					console.log('time12',time12)
+					console.log('time24',time24)
+
+					time12Hour=time12.getHours()
+					time24Hour=time24.getHours()
+					time36Hour=time36.getHours()
+					console.log('time12Hour',time12Hour)
+					console.log('time24Hour',time24Hour)
+
+					// 0 night
+					// 6 day
+					// 12 day
+					// 18 night
+					let dayNight_12='day'
+					let dayNight_24='day'
+					let dayNight_36='day'
+
+					switch(time12Hour){
+						case 12:
+						case 18:
+							dayNight_12='night'
+						break;
+
+						default:
+						break;
+					}
+					switch(time24Hour){
+						case 12:
+						case 18:
+							dayNight_24='night'
+						break;
+
+						default:
+						break;
+					}
+					switch(time36Hour){
+						case 12:
+						case 18:
+							dayNight_36='night'
+						break;
+
+						default:
+						break;
+					}
 
 					// console.log('nowLocation',nowLocation)
 					$.each(nowLocation,function(key,value){ //在使用$.each()去取陣列裡面的key value 縣市名稱是在locationName
@@ -85,22 +146,39 @@
 						let stringID=nowID.padStart(2,"0"); //先把index轉成字串後 padStart(共兩位,"補0")將id補0
 						// String()是直接把要改的內容放進(裡)(跟Number()用法一樣); toString()是前面要放變的東西如 nowID.toString()
 						let nowLocationName=value.locationName;
-						let nowLocationMaxT=value.weatherElement[4]['time'][0]['parameter']['parameterName']
+						
+						// 12
+						let nowLocationMaxT_12=value.weatherElement[4]['time'][0]['parameter']['parameterName']
 						// let nowLocationMinT=value.weatherElement[2]['time'][0]['parameter']['parameterName']
-						let nowLocationMinT=value.weatherElement[2].time[0].parameter.parameterName
-						let nowLocationWxName=value.weatherElement[0].time[0].parameter.parameterName
-						let nowLocationWxValue=value.weatherElement[0].time[0].parameter.parameterValue.toString();
-						console.log(nowLocationWxValue)
-						let imgUrl=nowLocationWxValue + '.svg';
+						let nowLocationMinT_12=value.weatherElement[2].time[0].parameter.parameterName
+						let nowLocationWxName_12=value.weatherElement[0].time[0].parameter.parameterName
+						let nowLocationWxValue_12=value.weatherElement[0].time[0].parameter.parameterValue.toString();
+						console.log(nowLocationWxValue_12)
+						let imgUrl_12=nowLocationWxValue_12 + '.svg';
 
-						// let content=`
-						// <li>${nowLocationName}</li>
-						// `;
+						// 24
+						let nowLocationMaxT_24=value.weatherElement[4].time[1].parameter.parameterName
+						let nowLocationMinT_24=value.weatherElement[2].time[1].parameter.parameterName
+						let nowLocationWxName_24=value.weatherElement[0].time[1].parameter.parameterName
+						let nowLocationWxValue_24=value.weatherElement[0].time[1].parameter.parameterValue.toString();
+						console.log(nowLocationWxValue_24)
+						let imgUrl_24=nowLocationWxValue_24 + '.svg';
+
+						// 36
+						let nowLocationMaxT_36=value.weatherElement[4].time[2].parameter.parameterName
+						let nowLocationMinT_36=value.weatherElement[2].time[2].parameter.parameterName
+						let nowLocationWxName_36=value.weatherElement[0].time[2].parameter.parameterName
+						let nowLocationWxValue_36=value.weatherElement[0].time[2].parameter.parameterValue.toString();
+						console.log(nowLocationWxValue_36)
+						let imgUrl_36=nowLocationWxValue_36 + '.svg';
+
 						let content=`
 						<tr>
 							<td>${stringID}</td>
 							<td>${nowLocationName}</td>
-							<td>${nowLocationMinT} - ${nowLocationMaxT} ℃ ${nowLocationWxName} <img src="./weatherimg/day/${imgUrl}" alt=""></td>
+							<td>${nowLocationMinT_12} - ${nowLocationMaxT_12} ℃ ${nowLocationWxName_12} <img src="./weatherimg/${dayNight_12}/${imgUrl_12}" alt=""></td>
+							<td>${nowLocationMinT_24} - ${nowLocationMaxT_24} ℃ ${nowLocationWxName_24} <img src="./weatherimg/${dayNight_24}/${imgUrl_24}" alt=""></td>
+							<td>${nowLocationMinT_36} - ${nowLocationMaxT_36} ℃ ${nowLocationWxName_36} <img src="./weatherimg/${dayNight_36}/${imgUrl_36}" alt=""></td>
 						</tr>
 						`;
 						console.log('nowLocationName',nowLocationName)
@@ -108,9 +186,32 @@
 					})
 
 					//run datatable
-					myTable.DataTable();
-					
-					
+					myTable.DataTable({
+						language: {
+                            "sProcessing": "處理中...",
+                            "sLengthMenu": "顯示 _MENU_ 項結果",
+                            "sZeroRecords": "查無結果",
+                            "sInfo": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+                            "sInfoEmpty": "顯示第 0 至 0 項結果，共 0 項",
+                            "sInfoFiltered": "(由 _MAX_ 項結果過濾)",
+                            "sInfoPostFix": "",
+                            "sSearch": "搜索:",
+                            "sUrl": "",
+                            "sEmptyTable": "表中數據為空",
+                            "sLoadingRecords": "載入中...",
+                            "sInfoThousands": ",",
+                            "oPaginate": {
+                                "sFirst": "首頁",
+                                "sPrevious": "上頁",
+                                "sNext": "下頁",
+                                "sLast": "末頁"
+                            },
+                            "oAria": {
+                                "sSortAscending": ": 以升序排列此列",
+                                "sSortDescending": ": 以降序排列此列"
+                            }
+                        }
+					});
 				}
 			})
 		})
