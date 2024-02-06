@@ -17,6 +17,8 @@ function dd($data){
 
 echo json_encode($mobilearr); //改成json格式 使用json_encode()
 
+dd($mobilearr);
+
 
 
 
